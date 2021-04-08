@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-------------------------80  caractères------------------------------>
+<!-------------------- spécifications (quasi) obligatoires------------->
+<!-------------------- encodage UTF-8 --------------------------------->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title> Blog de Joël Dendaletche </title> 
+<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page                                      -->
+	<link rel="shortcut icon" href="icone.png" type="image/x-icon"/>
+	<link rel="icon" href="icone.png" type="image/x-icon"/>
+	
+<!--------------------------------------------------------------------->
+<!-------------------- liens vers des scripts externes ---------------->
+	<script src="./sommaire.js"></script>
+	<script src="./JS/graphiques.js"></script>
+
+	<script language="JavaScript">
+		var titrePage = "Blog de Joël Dendaletche";
+		var aurevoir = "&Aacute; bientôt, revenez vite !";
+		//var id = setInterval(ma_fontion, 1000);
+		function titre(texte) 
+		{
+			document.title = texte;
+		}
+
+		var nTitres = 11;
+		var etatItems = new Array()
+		function init()
+		{
+			 // alert("debug init");
+			 construireListeSommaire ();
+
+			 for (var i = 1 ; i<=nTitres ; i++) {
+			 	etatItems[i] = true;
+				document.getElementById("content_item_"+ parseInt(i)).hidden = etatItems[i];
+			 }
+		}
+		function affCache(obj) {
+			l = obj.id.length;
+			num = parseInt(obj.id.slice(4,l)) // récupère le numéro de l'id
+			etatItems[num] = 1 - etatItems[num];
+			document.getElementById("content_item_"+ num).hidden = etatItems[num];
+		}
+	</script>
+	
+	<meta name="author" content="Joël Dendaletche"/>
+	<meta name="created" content="2019-09-02"/>
+	<meta name="changed" content="2019-09-16"/>
+	<meta name="Company" content="Lycée La Découverte Decazeville 
+								12300 Aveyron Occitanie France Terre"/>
+	<meta name="description" content="TD Web pour l'IUT 1 d'informatique de Rodez">
+	<meta name="keywords" content="Informatique WEB HTML CSS JS javascript">
+<!-- la méta-donnée suivante rafraichit l'écran toute les minutes    -->
+
+<!--	<meta http-equiv="refresh" content="60">-->
+
+<!--------------------------------------------------------------------->
+<!-------------------- feuilles de style externe ---------------------->
+	<link rel="stylesheet" 	type="text/css" 
+							href="./CSS/styleProgramme.css">
+	<link rel="stylesheet" 	type="text/css" 
+							href="./CSS/styleCode.css">
+	<link rel="stylesheet" 	type="text/css" 
+							href="./CSS/menuEnCss.css">
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/style.css">
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" 
+	      href="./CSS/styleQuiz.css">
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/simpleMenuHorizontal.css">
+
+<!--------------------------------------------------------------------->
+<!----------- Définition du style local de la page : déconseillé ! ---->
+	<style>
+	         
+	</style>
+</head>
+<!--------------------------------------------------------------------->
+<!-- la balise body délimite les instructions qui permettront d'afficher 
+				le contenu de la page web à l'écran                  -->
+<body onload="init();" 	onblur="titre(aurevoir); // en partant" 
+						onfocus="titre(titrePage); // en arrivant ">
+<!--------------------------------------------------------------------->
+<!--                   bloc d'entête de la page                      -->
+	<header title="Entête de la page du blog de Joël Dendaletche ; 
+											balise <header></header>"> 
+		<small>Blog de <abbr title="Joël Dendaletche">jodenda</abbr> </small>
+	<nav>
+	<ul class="menu" style="margin:0;border:0;padding:0;">
+		<li><a href="./xxxxx.html">à venir</a>
+		</li>
+		<li><a href="./xxxxx.html">à venir</a>
+		</li>		<li><a href="./xxxxx.html">à venir</a>
+		</li>		<li><a href="./xxxxx.html">à venir</a>
+		</li>
+	</ul>
+	</nav>
+	</header>
+	<section>
+	<article>
+		
+	<p>Enseignements à l' <a href="https://www.iut-rodez.fr/" target="_blank">IUT de Rodez</a></p>
+
+	<h1>TD Web IUT</h1>
+	<!---------------------------------------------------------------->
+		<div id="item1" onclick="affCache(this);">
+	<p>&lt;     Cours 1 : bases du HTML</p>
+		</div>
+		<div id="content_item_1">
+	<h2>Cours / TD 1 : bases du HTML</h2>
+		<h3>1. Les balises : définition, quelques exemples, puis mise en oeuvre ... </h3>
+	<a href="./IUT/cours1/Chap1_applications.html">TD 1</a>
+
+	<h3>Ressources du TD 1 :</h3>
+	<ul>
+		<li><a href="./IUT/cours1/cours1 les bases du HTML.html">ce cours en plus détaillé</a></li>
+		<li><a href="./IUT/cours1/Applications_Chapitre1_basesHTML/part1.html">part1.html</a></li>
+		<li><a href="./IUT/cours1/Applications_Chapitre1_basesHTML/structure_page_html.htm">structure_page_html.htm</a></li>
+		<li><a href="./IUT/cours1/Applications_Chapitre1_basesHTML/AppliA_approf_partie1.html">AppliA_approf_partie1.html</a></li>
+		<li><a href="./IUT/cours1/Applications_Chapitre1_basesHTML/AppliB_approf_partie1.html">AppliB_approf_partie1.htm</a>l</li>
+		<li><a href="./IUT/cours1/Applications_Chapitre1_basesHTML/exo1.html">exo1.html</a></li>
+		<!-- <li>debug</li> -->
+	</ul>
+	<hr/>
+	</div>
+	<!---------------------------------------------------------------->
+		<div id="item2" onclick="affCache(this);">
+	<p>&lt;    Cours 2.1 : feuille de style</p>
+		</div>
+		<div id="content_item_2">
+	<h2>Cours / TD 2 : gérer le style en <abbr title="Cascade Style Sheet">CSS</abbr> ; les tableaux en html </h2>
+		<p><strong>Objectifs : </strong> séparer la gestion du fond et de la forme (style) grâce au <abbr title="Cascade Style Sheet">CSS</abbr> ;
+			découvrir les tableaux en <abbr title="HyperText Markup Langage">HTML</abbr> et leur appliquer une feuille de style.</p>
+		<h3>1. la gestion des styles par le langage <abbr title="Cascade Style Sheet">CSS</abbr></h3>
+
+		<h4>1.1. Le style est définissable de trois façons</h4>
+
+		<p>Le style d'un élement d'une page web peut être défini à trois niveaux :</p>
+			<ol>
+				<li>en ligne (<i>inline</i>) ; c'est à dire comme valeurs de style affectées à l'attribut style de la balise de l'élément ciblé ; par exemple :
+					<div class="codeHTML">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&lt;<span class="balise">p</span>
+						<span class="attribut">style</span>="<span class="texte"><span class="caracteristique">color</span> :
+											<span class="valeur">lightblue</span>;</span>" &gt;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ma prose écrite ici ... &lt;br/&gt;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bla bla <br/>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&lt;<span class="balise">/p</span> &gt;
+					</div>
+				<li>interne à la feuille (<i>inline</i>) ; c'est à dire regroupé dans la balise &lt;<span class="balise">title</span>&gt; de la partie &lt;<span class="balise">head</span>&gt; : <br/>
+					<div class="codeHTML">
+
+						&lt;<span class="balise">head</span>&gt; : <br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&lt;<span class="balise">style</span>&gt; <br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="commentaire">/* Ceci est un commentaire sur le style */ </span><br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<span class="balise">p</span> { <span class="commentaire">/* gère le style de tous les paragraphes. */ </span><br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="caracteristique">border</span> :
+											<span class="valeur">solid 2px black</span>;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="caracteristique">color</span> :
+											<span class="valeur">lightblue</span>;<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="caracteristique">background-color</span> :
+											<span class="valeur">orange;</span><br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	 }<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&lt;<span class="balise">/style</span>&gt; <br/>
+						&lt;<span class="balise">/head</span>&gt; : <br/>
+
+					</div>
+				</li>
+				<li> externe à la feuille ; c'est à dire dans un ou plusieurs fichiers d'extension <srong><u>.css </u></srong> liés à la page par une balise &lt;<span class="balise">link</span>&gt; :<br/>
+					<div class="codeHTML">
+
+					&lt;<span class="balise">head</span>&gt;<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&lt;<span class="balise">link</span>
+					              <span class="attribut">rel</span>="<span class="texte">stylesheet</span>" <span class="attribut">type</span>="<span class="texte">text/css</span>"
+					              <span class="attribut">href</span>="<span class="texte">mystyle.css</span>"> <br/>
+					&lt;<span class="balise">/head</span>&gt;
+					</div>
+				</li>
+			</ol>
+		</div></div>
+
+	<!---------------------------------------------------------------->
+		<div id="item3" onclick="affCache(this);">
+	<p>&lt;     Cours 2.2 : tableaux</p>
+		</div>
+		<div id="content_item_3">
+			<h2>1. les balises basiques d'un tableau : table ; tr ; th ; td ; caption </h2>
+				<ul>
+					<li><a href="https://www.w3schools.com/html/html_tables.asp" target="_blank">balises basiques de tableau :</a>
+						<dl>
+							<dt>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/tags/tag_table.asp" target="_blank">table</a> ;
+							</dt>
+							<dt>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/tags/tag_tr.asp" target="_blank">tr</a>;
+							</dt>
+							<dt>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/tags/tag_td.asp" target="_blank">td</a>;
+							</dt>
+							<dt>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/tags/tag_th.asp" target="_blank">th</a>;
+							</dt>
+						</dl>
+					</li>
+					<li>Un titre générale peut être donné au tableau : <a href="https://www.w3schools.com/tags/tag_caption.asp" target="_blank">balise caption</a></li>
+				</ul>
+			<h2>2. les balises structurantes : thead ; tbody ; tfoot</h2>
+				<p>Le tableau peut être structuré en trois parties indépendantes : </p>
+				<ul>
+					<li>un tableau d'entête 		:  <a href="https://www.w3schools.com/tags/tag_thead.asp" target="_blank">balise thead</a></li>
+					<li>un corps de tableau 		:  <a href="https://www.w3schools.com/tags/tag_tbody.asp" target="_blank">balise tbody</a></li>
+					<li>un tableau de pied &nbsp; 	:  <a href="https://www.w3schools.com/tags/tag_tfoot.asp" target="_blank">balise tfoot</a>
+					dont le rôle est souvent accessoire et permet de rappeler l'entête dans des très grands tableaux de données.</li>
+				</ul>
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item4" onclick="affCache(this);">
+	<p>&lt;     Cours 2.3 : td sur les tableaux et effets de style</p>
+		</div>
+		<div id="content_item_4">
+		<h2>1. les balises basiques d'un tableau : table ; tr ; th ; td ; caption </h2>
+			<h3>exercice 1 :</h3>
+				<ol>
+					<li>créer un fichier tabExercice1.html dans votre éditeur ;</li>
+					<li>écrire la structure de base d'une page HTML : &lt;!doctype ... puis les blocs HEAD et BODY inclus dans le bloc général HTML ;</li>
+					<li>dans le bloc HEAD, ajouter une balise meta pour préciser l'encodage utf-8 ; taper des mots accentués dans le bloc body pour vérifier le bon encodage ;</li>
+					<li>dans le bloc HEAD, copier/coller le bloc de méta et de commentaires perso : nom de l'auteur, etc. pris dans vos fichiers précédents ;</li>
+					<li>dans le bloc BODY, reproduire avec les balises h1, h2, etc. le plan de ce cours (copier /coller le contenu des titres de ce site !) ;</li>
+					<li>par la suite tout se fera dans le bloc BODY ; créer un tableau simple de 4 colonnes et 10 lignes, de titre "mon tableau" et dont chaque cellule est numérotée ; seules les blaises table, tr, td et caption seront utilisées ; </li>
+					<li>ajouter à votre tableau deux lignes de titres avec la balise th (copier coller une des lignes normales et la modifier)</li>
+				</ol>
+			<h2>2. les balises structurantes : thead ; tbody ; tfoot</h2>
+			<h3>exercice 2 :</h3>
+				<p>Inspirez-vous de l'exemple : <a href="./TD IUT/Exemple_tableau_structure.html" target="_blank">Exemple_tableau_structure.html</a></p>
+				<ol>
+					<li> ajouter dans votre code, un tableau d'entête, inclure le code du taleau précédent dans un bloc TBODY et créer un pied de tableau avec la balise tfoot ;</li>
+					<li> créer une feuille de style <strong><u>styleTableaux.css</u></strong> dans un <strong><u>dossier</u></strong> appelé <strong><u>CSS</u></strong> ;</li>
+					<li> inclure un lien &lt; link ... dans le <strong><u>bloc head</u></strong> pour lier votre fichier à la feuille de style (attention au chemin : <i>path</i> !)</li>
+
+				</ol>
+			<h2>3. fusion de colonnes et lignes avec les attributs <a href="https://www.w3schools.com/tags/att_td_colspan.asp">colspan</a> et <a href="https://www.w3schools.com/tags/att_td_rowspan.asp">rawspan</a> et effets de style</h2>
+			<p>inspirez-vous des exemples de w3school pour réaliser les résultats obtenus dans <a href="./TD IUT/Fusions.html" 			target="_blank">Fusions.html</a></p>
+			<h3>exercice 3 :</h3>
+				<ol>
+					<li>créer les trois petits tableaux de l'exemple <a href="./TD IUT/Fusions.html" 			target="_blank">Fusions.html</a></li>
+					<li>ajouter l'instruction    td:hover { color:white;background:black;} dans votre feuille de style ; commenter ce code css dans la feuille de style pour expliquer ce que cela donne ; </li>
+					<li>que donnera tr:hover { ici écrivez ce qui vous plait ... }</li>
+					<li>créer dans votre feuille plusieurs paragraphes (copier coller des strophes) et essayer p:hover ; p.strophe1:hover { ...} </li>
+					<li>dans la feuille de style, tester l'effet de table { border-collapse : collapse; } ; commenter ;</li>
+					<li>dans la feuille de style, tester l'effet de tr :nth-child(2n+1) ou tr: nth-child(2n+2) ou tr:nth-child(odd) ou tr: nth-child(even) ; commenter chaque cas /li>
+					<li>expliquer dans un paragraphe ce que réalise  table>tr :nth-child( n à tester ) avec des exemples différents (utiliser les id pour différencier
+									le style des différents tableaux d'exemples).</li>
+				</ol>
+
+			<hr/>
+			<h2>4. Ressources du TD 2 :</h2>
+				<ul>
+					<li><a href="https://www.pierre-giraud.com/html-css-apprendre-coder-cours/pseudo-classe/">cours en français sur les pseudo-classes : hover, nth-child, ... </a></li>
+					<li>-------------------------------------------------------------------------------------------------</li>
+					<li><a href="./TD IUT/Exemple1_tableau_CSS.css" target="_blank">Exemple1_tableau_CSS.css</a></li>
+					<li><a href="./TD IUT/Exemple1_tableau_CSS.html" target="_blank">Exemple1_tableau_CSS.html</a></li>
+					<li><a href="./TD IUT/Exemple2_tableau_CSS.html" target="_blank">Exemple2_tableau_CSS.html</a></li>
+					<li><a href="./TD IUT/Exemple3_tableau_CSS.html" target="_blank">Exemple3_tableau_CSS.html</a></li>
+					<li><a href="./TD IUT/pres_tab.css" 			target="_blank">pres_tab.css</a></li>
+					<li><a href="./TD IUT/pres_tab2.css" 			target="_blank">pres_tab2.css</a></li>
+					<li><a href="./TD IUT/pres_tab3.css" 			target="_blank">pres_tab3.css</a></li>
+					<li><a href="./TD IUT/tableau_css.css" 			target="_blank">tableau_css.css</a></li>
+					<li><a href="./TD IUT/tab_struct.css" 			target="_blank">tab_struct.css</a></li>
+				</ul>
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item5" onclick="affCache(this);">
+	<p>&lt;     Cours 2.4 : corrigé visuel du td sur les tableaux et effets de style</p>
+		</div>
+		<div id="content_item_5">
+			<h1>Exemple de tableau complexe</h1>
+			<p>Tester l'effet des pseudo-classes sur les éléments du tableau :</p>
+			<ul>
+			  <li>survoler (pseudo classe :hover) ;</li>
+			  <li>sélectionner le n ième enfant (pseudo classe :nth-child(n) ) ; <br/>essayer : nth-child(2) ; nth-child(odd) ; nth-child(2n+4) dans un <br/>tableau à 4 colonnes ;</li>
+			  <li>les effets de style se trouvent dans le bloc head de cette page dans le sous-bloc style !   ;)</li>
+			</ul>
+			<table border="1">
+			   <caption>Passagers du vol 377</caption>
+
+			   <thead> <!-- Entête du tableau -->
+
+				   <tr>
+					   <th>Nom</th>
+					   <th>&Acirc;ge</th>
+					   <th>Pays</th>
+				   </tr>
+			  <tr>
+					   <th>En minuscules</th>
+					   <th>En annexes</th>
+					   <th>Non abrégé</th>
+				   </tr>
+
+			   </thead>
+
+			   <tbody> <!-- Corps du tableau -->
+				   <tr>
+					   <td>Carmen</td>
+					   <td>33 ans</td>
+					   <td>Espagne</td>
+				   </tr>
+				   <tr>
+					   <td>Michelle</td>
+					   <td>26 ans</td>
+					   <td>&Eacute;tats-Unis</td>
+				   </tr>
+				   <tr>
+					   <td>François</td>
+					   <td>43 ans</td>
+					   <td>France</td>
+				   </tr>
+				   <tr>
+					   <td>Martine</td>
+					   <td>34 ans</td>
+					   <td>France</td>
+				   </tr>
+				   <tr>
+					   <td>Jonathan</td>
+					   <td>13 ans</td>
+					   <td>Australie</td>
+				   </tr>
+				   <tr>
+					   <td>Xu</td>
+					   <td>19 ans</td>
+					   <td>Chine</td>
+				   </tr>
+			   </tbody>
+
+			   <tfoot> <!-- Pied de tableau -->
+				   <tr>
+					   <th>Nom</th>
+					   <th>&Acirc;ge</th>
+					   <th>Pays</th>
+				   </tr>
+			   </tfoot>
+			</table>
+			<hr/>
+			<h2>Sources d'inspiration :</h2>
+			<ul>
+			  <li>excellent <a href="https://www.pierre-giraud.com/html-css-apprendre-coder-cours/pseudo-classe/" target="_blank">cours en français</a> sur les <strong><u>pseudo classes</u></strong> et plein d'autres belles choses ...</li>
+			  <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes" target="_blank">référence en français </a>sur les pseudo classes ; plus officiel ; avec plein d'exemples  ......</li>
+			</ul>
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item6" onclick="affCache(this);">
+	<p>&lt;     Cours 3.1 : Chapitre 3 – Les liens hypertextes : balise a</p>
+		</div>
+		<div id="content_item_6">
+			<h2>1. Les liens simples</h2>
+			<h3>1.1. Lien vers une page externe </h3>
+			<p>exemples :</p>
+			<ul>
+				<li><b><u>lien relatif</u></b> à une page du même site stockée dans le sous dossier "partie2" du dossier "tuto" :<br/>
+				<code>&lt;<b>a</b> href="./tuto/partie2/page3.html" target="_self" title="vers le tutoriel"&gt;page 3 du tuto partie 2&lt;<b>/a</b>&gt;
+					</code></li>
+				<li><b><u>lien absolu</u></b> vers la page d'accueil (souvent index.html) du site jodenda.free.fr sur le web :<br/>
+				&lt;a href="http://jodenda.free.fr/" target="_blank" title="vers la page de jodenda"&gt;page des TD &lt;/a&gt;
+					</li>
+
+
+			</ul>
+			<p>Remarques :</p>
+			<ol>
+				<li>l'attribut <b><u>target</u></b> est facultatif, pour la valeur _self par défaut, le clic sur le lien remplace la page active par la page de destination ; pour la valeur _blank, un nouvel onglet est ouvert (cela peut allourdir la navigation) ;</li>
+				<li>l'attribut <b><u>title</u></b> est facultatif mais renseigne les robots sur les mots clefs de la page de destination ;</li>
+			</ol>
+			<img alt="Exemple d'arborescence de dossiers et adresses relatives de fichiers utilisés dans le code" src="./images/tuto/exempleAdressesRelativesFichiers.png" />
+			<h3>1.2. Lien vers un élément de la même page : vers une ancre </h3>
+			Le code suivant :
+			<code>&lt;<b>a</b> href="#partie2" target="_self" title="vers l'ancre partie2"&gt;partie 2 de cette page&lt;<b>/a</b>&gt;
+					</code> <br/>, permet de déplacer le focus sur la zone d'affichage d'une balise d'identifiant id = "partie2".
+			<p>C'est pratique pour créer un sommaire et des retours au début de page (cf. exercices) </p>
+			<h3>lien de téléchargement : autre format que html</h3>
+			<p>Tout fichier qui n'est pas de format htm ou html est considéré comme téléchargeable : pdf, doc, ...
+			<a href="./TD IUT/cours3/Applications_Chapitre3.zip" title=""/>téléchargement des exercices du cours3</a></p>
+			<h2>2. Liens complexes </h3>
+			<h3>2.1. lien à un programme en javascript</h3>
+			<code>&lt;p id="r"&gt;Coucou c'est moi&lt;/p&gt;
+				&lt;a href="javascript:alert(document.getElementById('r').innerHTML);"&gt;Affiche le contenu du paragraphe identifié par r JavaScript&lt;/a&gt;</code>
+			<h3>2.2. liens peu utilisés</h3>
+			<ul>
+				<li> mailto:adresse@monsite.fr comme valeur de l'attriut href, ouvre un logiciel de gestion de mail pour envoyer un mail ; c'est de moins en moins utilisé ;</li>
+				<li> </li>
+			</ul>
+			<h2>3. Ressources et compléments du cours 3 :</h2>
+			<ul>
+				<li><a href="./TD IUT/cours3/Chapitre3_Liens_cours.html">ce cours (D. Pelissier) </a></li>
+				<li><a href="./TD IUT/cours3/Chapitre3_Liens_complements.html">compléments de ce cours (D. Pelissier) </a></li>
+				<li><a href="./TD IUT/cours3/Chapitre3_Liens_applications.html">exercice pour le td de ce cours (D. Pelissier) </a></li>
+				<li><u><b>Validation</b></u> de vos codes <u><b>HTML</b></u> : <a href="https://validator.w3.org/">validator.w3.org</a></li>
+				<li><u><b>Validation</b></u> de vos codes <u><b>CSS</b></u> : <a href="https://jigsaw.w3.org/css-validator/validator.html.fr">https://jigsaw.w3.org/css-validator/validator.html.fr</a></li>
+
+			</ul>
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item7" onclick="affCache(this);">
+	<p>&lt;     Cours 3.2 : un peu de programmation en javascript</p>
+		</div>
+		<div id="content_item_7">
+			<h2>1. syntaxe et principes de base </h2>
+			<p>javascript est un langage interprété par le navigateur, son exécution dépend donc de la façon dont est conçue le navigateur, c'est pourquoi il faut utiliser des navigateurs les plus récents possibles.</p>
+			<h3>1.1. Les variables :</h3>
+			<p>Les variables doivent être déclarées à l'aide du mot réservé <u><b>var</b></u></p> : <code>var maVariable, compteurDeClic;</code>
+			<p>Le nom des variables est constitué de plusieurs mots accolés selon la convention Camel Case (<a href="https://fr.wikipedia.org/wiki/Camel_case" target="_blank"><img width="5%" src="./images/logo/220px-CamelCase_new.svg.png"/></a>) adaptée : seule la première initiale est minuscule ;</p>
+			<p>L'affectation (assignation = <i>assign</i>) est réalisée par le signe '=' ; les <u><b>opérations raccourcies</b></u> permettent de gagner de la place : maV = mav + 1; peut s'écrire maV += 1; </p>
+			<h3>1.2.Les opérations usuelles </h3>
+			<p>Soit trois variables : resultat ; prem ; second ; le tableau suivant présente les opérations usuelles qui sont réalisales :</p>
+			<table><caption>Les opérations de base</caption>
+				<thead>
+					<tr><th>opérateur(s)</th><th>exemple</th><th>valeur de <span class="resultat">resultat</span></th></tr>
+				</thead>
+				<tbody>
+					<tr><td>+, -, *, - </td><td>avec prem = 2 ; second = 3 ; <span class="resultat">resultat</span> = (prem * 2 + 3) / 7 + second ;</td><td> 4 </td></tr>
+					<tr><td>** = puissance </td><td>avec prem = 2 ; second = 3 ; <span class="resultat" onmouseover="document.getElementByClassName('resultat').style.color='orange';">resultat</span> = prem**second ;</td><td> 8 </td></tr>
+					<tr><td>% = modulo ou reste de la division entière </td><td>avec prem = 13 ; second = 6 ; <span class="resultat">resultat</span> = prem % second ;</td><td> <b>1</b> car 13 = 6 x 2 + <b>1</b> </td></tr>
+					<tr><td>++ incrémentation et <br/>-- décrémentation </td><td>avec prem = 13 ; second = 6 ; prem++ ; second++ ; </td><td> prem égal 14 et <br/>second égal 7  </td></tr>
+				</tbody>
+					<tr><td colspan="3"> <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank">site de référence w3school</a></td></tr>
+				<tfoot>
+				</tfoot>
+			</table>
+			<h3>1.3.Les trois localisations possible pour le code  </h3>
+			<p>Le code peut se trouver à trois endroits :</p>
+			<ol>
+				<li><u><b>en ligne</b></u> dans les valeurs fournies à certains <u><b>attributs</b></u> évènementiels des balises : <code>&lt;span onclick="alert('Bonjour tout le monde !');"&gt;</code> ; <a href="javascript:alert('Bonjour tout le monde !' );">cliquer ici</a></li>
+				<li>n'importe où dans les blocs <u><b>head</b></u> et <u><b>body</b></u>, à condition d'être encadré par la balise <u><b>script</b></u> : <code> &lt;script&gt; alert("coucou"); // commentaire &lt;/script&gt;</code></li>
+				<li> dans un fichier externe ; l'inclusion du code du fichier sommaire.js du dossier JS se fait comme ceci : <code>&lt;script src="./JS/sommaire.js"&gt;&lt;/script&gt;</code></li>
+			</ol>
+			<p><b>N.B. : les commentaires dans le code JS sont des // pour des lignes ; /* pour des bloc de lignes */ </b></p>
+			<ul>
+				<li><a href="" target="_blank"></a></li>
+				<li>-------------------------------------------------------------------------------------------------</li>
+				<li><a href="" target="_blank"></a></li>
+
+			</ul>
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item8" onclick="affCache(this);">
+	<p>&lt;     Cours 4.1 : les formulaires</p>
+		</div>
+		<div id="content_item_8">
+			<h2>1. Les formulaires</h2>
+			<p><a href="./IUT/cours4 formulaires/Chapitre4_cours_formulaire.html" title="cours de Daniel Pelissier sur les formulaires">Les détails de ce cours (Auteur : D. Pelissier) </a></p>
+			<h2>2. Utilisation des formulaires</h2>
+			<p>Quelques compléments ...</p>
+
+			<h2>2.1. envoi vers le serveur (vu en deuxième année en S3) </h2>
+			<p>Une fois le formulaire validé, les données sont envoyées vers le serveur qui en fera ce que le webmaster à prévu d'en faire ...</p>
+			<p>Il existe <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" target="_blank" title="lien vers w3school : HTTP Request Methods">plusieurs façons</a> d'envoyer les données :</p>
+			<ul>
+				<li>par défaut, c'est la méthode GET qui est utilisée ; les valeurs sont explicitement envoyées comme série de paramètres dans l'URL : jodenda.free.fr/traitement/dcontact.php?prenom=value1&nom=value2 </li>
+				<li>la méthode peut également être : GET (données cachées), PUT, etc ... cf. <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" target="_blank" title="lien vers w3school : HTTP Request Methods">w3school</a> </li>
+			</ul>
+
+			<h2>2.2. un peu de javascript ! (optionnel)</h2>
+			<p>Pour vérifier ce qui sera envoyé vers le serveur ou pour
+			directement utiliser les données recueillies hors ligne
+			(hors connexion), votre page peut faire appel à des
+			<u><b>scripts en javascript</b></u>.
+			</p>
+			<h3>2.2.1. Affichage de la valeur d'un input dans un zone de texte (p, textarea, ...) </h3>
+			<p>Pour réaliser cela, il faut :</p>
+			<ol>
+				<li><b><u>identifier</u></b> l'input par exemple &lt;input type="text" value="écrire ici votre nom" <b style="color:darkblue;"><u>id="inputNom"</u></b> onclick="alert(this.value);"/&gt; ; Ce qui donne :<br/>
+						<label for="inpNom">Taper votre nom ici</label>
+						<input type="text" nom="inpNom" value="écrire ici votre nom" id="inputNom" onclick="alert('identifiant de cet input : '+this.id+ ' et sa valeur ='+this.value);"/>
+				</li>
+				<li>créer un paragraphe ou une division (div) que vous identifierez ; cette zone recevra le résultat de vos choix après validation du formulaire ; par exemple : <br/>
+						&lt;div id="resultat"&gt; le code suivant permettra d'y inscrire ce que vous souhaitez y afficher : document.getElementById('resultat').innerHTML = " ici sera placer ce qu'il faut y afficher"
+				</li>
+						<div title="cadre identifié par l'id 'resultat' où s'affichera ce qui est affecté à innerHTML" style="border:solid 2px black;height:400px;width=90%;" >
+							<h4>cadre identifié par l'id 'resultat' où s'affichera ce qui est affecté à sa propriété innerHTML (son contenu HTML)</h4>
+							<table>
+								<tr>
+									<td id="navigateur" colspan="2"></td>
+								</tr>
+								<tr>
+									<td id = "prenom"></td><td id="nom"></td>
+								</tr>
+								<tr>
+									<td id="tdUserName"></td><td id="tdPassword"></td>
+								</tr>
+								<tr>
+									<td colspan="2" id="resultat"></td>
+								</tr>
+							</table>
+						</div>
+				<li>dans le ou les input de vos choix, vous pouvez maintenant lier un évènement (<abbr title="se déclanche sur un clic">onclick</abbr>, <abbr title="se déclanche à chaque frappe dans la zone de saisie">
+					oninput</abbr >, <abbr title="se déclanche après une entrée">onchange</abbr >, <abbr title="se déclanche au survol de la souris">onmouseover</abbr >, etc. ) à un affichage dans l'element identifié par "resultat". Exemple : <br/>
+					<input type="button" value="afficher coucou + le texte de la zone de texte dans resultat" onclick="document.getElementById('resultat').innerHTML += '<br/>coucou ' + document.getElementById('inputNom').value;" />
+				</li>
+
+			</ol>
+			<h3>2.2.2. Calcul(s) à partir des valeurs saisies dans le formulaire </h3>
+			<p>Le formulaire (balisé par <u><b>form</b></u>), peut contenir
+			un tableau qui permet de ranger plusieurs <u><b>input</b></u>
+			ou boutons (balise orpheline<u><b>button</b></u> ou liste déroulante
+			(balise <u><b>select</b></u> encadrant une série de balises
+			<u><b>option</b></u>. <br/>
+			Pour approfondir le sujet aller voir dans
+			<a href="https://www.w3schools.com/html/html_form_elements.asp"
+			   title="éléments de formulaire"
+			   target="_blank">élément de formulaire (w3school)</a>.
+			<br/>Comme vu précédemment, les valeurs des inputs peuvent
+			être récupérées avec le code
+			document.getElementById('idDeLInput').value ;
+			le code de l'exmple suivant peut être visualisé avec
+			Ctrl + U. :
+			</p>
+			<form style="border:dashed 2px black;">
+				<fieldset>
+				<legend>formulaire form > fieldset :</legend>
+				<table>
+					<tr>
+						<td>
+							<label for="browser1">Votre navigateur est </label>
+							<input list="browsers1" onchange="document.getElementById('navigateur').innerHTML += '<br/>datalist : votre navigateur est '+ this.value">
+							<datalist id="browsers1">
+								<option value="Firefox"></option>
+								<option value="Chrome"></option>
+								<option value="Internet Explorer"></option>
+								<option value="Opera"></option>
+								<option value="Safari"></option>
+							</datalist>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<label for="browser2">Votre navigateur est </label>
+							<select id="browsers2" onchange="document.getElementById('navigateur').innerHTML += '<br/>select : votre navigateur est '+ this.value" >
+								<optgroup label="Navigateurs les plus utilisés">
+									<option value="Firefox">Firefox</option>
+									<option value="Chrome">Chrome</option>
+									<option value="Internet Explorer">Internet Explorer</option>
+								</optgroup>
+								<optgroup label="Navigateurs moins utilisés">
+									<option value="Opera">Opera</option>
+									<option value="Safari">Safari</option>
+								</optgroup>
+							</select>
+							</td>
+						<td>
+							<button type="button"
+									onclick="document.getElementById('resultat').innerHTML = '<br/>button : Click Me!';" >
+								Click Me!
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="textSurName"> prénom (taille > 2) : </label>
+							<input 	type="text" id="textSurName"
+								value="mon prénom (taille > 2)"
+								oninput="if(this.value.length > 2) {document.getElementById('prenom').innerHTML = 'votre prénom est '+ this.value;} else {}">
+						</td>
+						<td><label for="textName"> nom (taille > 3) : </label>
+							<input 	type="text" id="textName"
+								value="nom (taille > 3)"
+								oninput="if(this.value.length >= 4) {document.getElementById('nom').innerHTML = 'votre nom est '+ this.value;}">
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="username">User name : ( taille > 6)</label><input type="text" name="username"
+								oninput="if(this.value.length > 6) {document.getElementById('tdUserName').innerHTML = 'votre nom d\'utilisateur est '+ this.value;} else {document.getElementById('tdUserName').innerHTML = '    ';}"
+								onmouseover="document.getElementById('tdUserName').innerHTML = 'votre nom d&quot;utilisateur est '+ this.value;}">
+						</td>
+						<td><label for="password">password (pour de rire) :</label><input type="password" name="password"
+					            oninput="document.getElementById('tdPassword').innerHTML = 'votre mot de passe est <span style='+'color:red;background:darkgrey;'+'> '+ this.value + ' </span><u><b>visible !</b></u>';">
+					    </td>
+					</tr>
+					<tr>
+						<td><label for="typeInput">les différents types d'input :</label>
+							<input type="radio" name="typeInput" value="button" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\'input'+'/>';"> button<br/>
+							<input type="radio" name="typeInput" value="checkbox" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\'input'+'/>';"> checkbox<br/>
+							<input type="radio" name="typeInput" value="color" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\'input'+'/>';"> color<br/>
+							<input type="radio" name="typeInput" value="date" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\'input'+'/>';"> date<br/>
+							<input type="radio" name="typeInput" value="datetime-local" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> datetime-local<br/>
+							<input type="radio" name="typeInput" value="email" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> email<br/>
+							<input type="radio" name="typeInput" value="file" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> file<br/>
+							<input type="radio" name="typeInput" value="hidden" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> hidden = invisible !<br/>
+							<input type="radio" name="typeInput" value="image" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> image<br/>
+							<input type="radio" name="typeInput" value="month" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> month<br/>
+							<input type="radio" name="typeInput" value="number" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> number<br/>
+							<input type="radio" name="typeInput" value="password" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> password<br/>
+							<input type="radio" name="typeInput" value="radio" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> radio<br/>
+							<input type="radio" name="typeInput" value="range" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> range<br/>
+							<input type="radio" name="typeInput" value="reset" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> reset<br/>
+							<input type="radio" name="typeInput" value="search" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> search<br/>
+							<input type="radio" name="typeInput" value="submit" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> submit<br/>
+							<input type="radio" name="typeInput" value="tel" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> tel<br/>
+							<input type="radio" name="typeInput" value="text" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> text<br/>
+							<input type="radio" name="typeInput" value="time" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> time<br/>
+							<input type="radio" name="typeInput" value="url" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> url<br/>
+							<input type="radio" name="typeInput" value="week" onclick="document.getElementById('exempleInput').innerHTML = '<input type='+this.value+' value='+'exemple d\input'+'/>';"> week<br/>
+						</td>
+						<td id="exempleInput"></td>
+					</tr>
+					<tr>
+						<td><input type="submit">
+						</td>
+						<td><input type="reset">
+						</td>
+					</tr>
+				 </table>
+				</fieldset>
+			</form>
+
+			<h2>3. Ressources et compléments du cours 4 :</h2>
+			<ul>
+				<li><a href="./IUT/cours4 formulaires/Chapitre4_cours_formulaire.html">ce cours (D. Pelissier) </a></li>
+				<li><a href="./IUT/cours4 formulaires/Chapitre4_Formulaires_applications.html">exercice pour le td de ce cours (D. Pelissier) </a></li>
+				<li><a href="./IUT/cours4 formulaires/Applications_Chapitre4.zip">archive des ressources pour le td de ce cours (D. Pelissier) </a></li>
+				<li><a href="./IUT/cours4 formulaires/cours4 formulaires.zip">archive des corrigés pour le td de ce cours (D. Pelissier) </a></li>
+				<li><u><b>Validation</b></u> de vos codes <u><b>HTML</b></u> : <a href="https://validator.w3.org/">validator.w3.org</a></li>
+				<li><u><b>Validation</b></u> de vos codes <u><b>CSS</b></u> : <a href="https://jigsaw.w3.org/css-validator/validator.html.fr">https://jigsaw.w3.org/css-validator/validator.html.fr</a></li>
+
+			</ul>
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item9" onclick="affCache(this);">
+	<p>&lt;     Cours 5 : inclure des fichiers audio et vidéo</p>
+		</div>
+		<div id="content_item_9">
+			<h1>cours 5 – Les fichiers vidéos et audio</h1>
+			<p>Des fichiers audio et vidéo sont parfois insérés dans les
+			pages internet. <br/>
+Le W3C recommande d’utiliser le format mp3 pour les fichiers son et le
+format mp4 pour les fichiers vidéos.</p>
+
+
+			<h2>Section 1. Intégration de fichiers VIDEOS</h2>
+			<p>Les fichiers vidéos peuvent être intégrés à l’aide d’une
+			balise spécifique &lt;VIDEO&gt; <br/> Exemple de code :</p>
+			<code>
+				&lt;video width="400" controls&gt; <br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="mov_bbb.mp4" type="video/mp4"&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Votre navigateur de supporte pas la balise VIDEO. <br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pensez à le mettre à jour, bon sang !
+				<a 	href="https://fr.wikipedia.org/wiki/Vocabulaire_du_capitaine_Haddock"
+					target="_blank" >bougre d'ectoplasme à roulette !</a> <br/>
+				&lt;/video&gt;
+			</code>
+			<p>Certains attributs permettent de contrôler les
+			caractéristiques de la vidéo.
+			Exemple : </p>
+			<code>&lt;video width="320" height="240" controls autoplay muted loop &gt;
+			</code>
+			<p>Dans ce cas, la vidéo proposera une barre de navigation
+			(play, pause, avancement), démarrera dès qu’elle sera chargée
+			(autoplay), le son sera coupé par défaut (muted) et elle
+			recommencera indéfiniment (loop).<br/>
+			Il existe d’autres attributs de cette balise trop mal connue :
+			<br/> Voir : <a href="https://www.w3schools.com/tags/tag_video.asp" target="_blank">
+				https://www.w3schools.com/tags/tag_video.asp</a> <br/>
+			Les vidéos Youtube peuvent être intégrées dans une page internet
+			 avec la balise &lt;IFRAME&gt;. Si elle est peu recommandée pour le
+			 référencement, elle offre un intérêt certain pour
+			 l’intégration d’une vidéo.<br/> Exemple :
+			</p>
+			<code>
+				&lt;iframe width="420" height="315" &gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;src="https://www.youtube.com/embed/XGSy3_Czz8k"&gt;<br/>
+				&lt;/iframe&gt;
+			</code>
+			<p>Cette balise accepte des attributs qui sont intégrés dans l’URL de la vidéo (P. Desproges) suivante :</p>
+			<code>
+				&lt;iframe width="560" <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height="315"
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src="https://www.youtube.com/embed/UbDD1NMf_k4?autoplay=1&controls=0&start=12&end=123"
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frameborder="0"
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow="<span style="color:green">accelerometer;
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoplay;
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encrypted-media;
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gyroscope;
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picture-in-picture</span>"
+				<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allowfullscreen&gt;
+				<br/>&lt;/iframe&gt;
+			</code><br/><h3>Pour voir ce que cela donne : </h3>
+			<input type="button" value="Afficher la vidéo" onclick="afficheVideoDesproges(this);"/>
+			<iframe width="560" height="315" id="videoCache" hidden
+					src="https://www.youtube.com/embed/UbDD1NMf_k4?autoplay=0&controls&start=12&end=15&mute"
+					frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture"
+					allowfullscreen>
+			</iframe>
+			<p>Dans cet exemple, la vidéo ne commence pas seule (autoplay=0), la
+			fenêtre affiche les contrôleurs (controls), démarre à
+			la 12ème seconde et s’arrête à la 15ème.<br/>
+			</p>
+			<p>
+			Enfin, il est possible de prévoir plusieurs formats de vidéo pour s’adapter
+			aux différents navigateurs :
+			</p>
+			<code>
+				&lt;video controls width="600"><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="iut.mp4"&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="iut.webm"&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="iut.ogg"&gt;<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Désolé votre navigateur est trop ancien, faut un peu suivre quoi !<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; Voici un lien&lt;a href="video/iut.mp4"&gt;pour télécharger cette vidéo
+				sur l’IUT de Rodez&lt;/a&gt;&lt;/p&gt;<br/>
+				&lt;/video&gt;
+			</code>
+			<p>Il est conseillé d’utiliser les formats mp4, webm et ogg<a href="#videoConverter"> <sub>(cf. note 1.)</sub></a><br/>
+			Les autres attributs d’intégration d’une vidéo youtube :
+			</p>
+			<a 	href="https://developers.google.com/youtube/player_parameters?hl=fr"
+				target="_blank">autres attributs youtube</a>
+	<!---------------------------------------------------------------->
+			<h3>Sources et liens utiles sur l'audio et la vidéo</h3>
+			<ul>
+				<li><a href="https://www.w3schools.com/html/html5_video.asp"
+				    target="_blank">la balise &lt;video&gt; sur w3school ;
+				    </a>
+				</li>
+			</ul>
+	<!---------------------------------------------------------------->
+		<h2>Section II. Intégration de fichiers AUDIOS</h2>
+		<p>Avant le HTML5, il fallait que l’utilisateur télécharge un
+		plug-in pour écouter des fichiers sons. Les navigateurs récents
+		 permettent d’utiliser la balise AUDIO qui évite ces problèmes<a href="#eviteP" target="_blank"><sub>(cf. notes 2.)</sub></a>.<br/>
+		Un fichier audio peut être intégré dans une page internet avec
+		le code suivant :</p>
+		<code>
+			&lt;audio controls&gt;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="horse.mp3" type="audio/mpeg"&gt;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Votre navigateur était utilisé par les australopithèques, changez-le !<br/>
+			&lt;/audio&gt;
+		</code>
+		<p>Comme la balise VIDEO, la balise AUDIO accepte certains attributs :</p>
+		<code>
+			&lt;audio controls autoplay loop&gt;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="horse.mp3" type="audio/mpeg"&gt;<br/>
+			&lt;/audio&gt;
+		</code>
+		<p>Dans ce cas, le fichier affichera des contrôles pour naviguer
+		dans le fichier (controls), démarrera seul (autoplay) et
+		tournera en boucle (loop).<br/>
+		Ainsi, pour avoir un fond sonore à votre page internet, il suffit
+		de ne pas mettre l’attribut controls :</p>
+		<code>
+			&lt;audio autoplay loop&gt;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="horse.mp3"
+			type="audio/mpeg"&gt;<br/>
+			&lt;/audio&gt;
+		</code>
+		<p>Mais cette pratique est mal supportée par les internautes…<br/>
+		<br/>
+			Comme pour les vidéos, il est possible de prévoir plusieurs
+			formats audios :
+		</p>
+		<code>
+			&lt;audio controls&gt;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="horse.ogg" type="audio/ogg"&gt;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;source src="horse.mp3" type="audio/mpeg"&gt;<br/>
+			Pensez à mettre à jour votre navigateur…<br/>
+			&lt;/audio&gt;
+		</code>
+		<p>Plus d’attributs de la balise AUDIO :
+		     <a href="https://www.w3schools.com/tags/tag_audio.asp"
+		        target="_blank">balise &lt;audio&gt; sur w3school</a>
+		</p>
+	<!---------------------------------------------------------------->
+		<h4>Notes : </h4>
+		<ol>
+			<li id="videoConverter">Il existe des logiciels gratuits de conversion de
+			format vidéos comme <a href="http://www.mirovideoconverter.com/ "
+					               target="_blank">
+					               mirovideoconverter</a></li>
+			<li id="eviteP">Pour être compatible avec les anciens navigateurs, il
+			faut alors utiliser des scripts JS pour repérer le type de
+			navigateur et proposer une solution alternative
+			(téléchargement, mise à jour, etc.).</li>
+		</ol>
+		<h2>APPLICATION</h2>
+		<ul>
+			<li>&Agrave; partir des fichiers disponibles dans la liste
+			des ressources (vidéos et audios, ci-dessous), testez les
+			différents codes présentés dans ce cours.</li>
+			<li> réaliser une page contenant deux lignes de 3 vidéos
+			     youtube(iframe dans un tableau).
+				<input type="button"
+				       value="cliquer ici pour connaître les dimensions totales de l'affichage"
+				       onclick="var lili = document.getElementById('liVide'); lili.innerHTML =
+				       'largeur = ' + window.innerWidth + ' pixels et hauteur = '
+				       + window.innerHeight + ' pixels'; lili.style.display = 'block';"/>
+			</li>
+			<li style="display:none; border : dashed 5px red; fontSize:200%; width:350px;" id="liVide"></li>
+		</ul>
+		<h3>ressources vidéos et audios :</h3>
+		<ul>
+			<li><a href="./IUT/Chapitre5/Videos/Videos.zip" target="_blank">archive de trois vidéos.</a></li>
+			<li><a href="./IUT/Chapitre5/Audios/Audios.zip" target="_blank">archive de deux fichiers audio.</a></li>
+		</ul>
+
+
+
+		<select id="selectSonVideo" onclick="alert('coucou');" hidden>
+			<option>Audios/intelligence_artificielle.mp3</option>
+			<option>Audios/agents_conversationnels.mp3</option>
+			<option><a href="./IUT/Chapitre5/Audios/Videos.zip" target="_blank">archive de trois vidéos.</a></option>
+<!--			<option><a href="" target="_blank"></a></option> -->
+		</select><a hidden href="" id="lienRessourcesSonVideo" target="_self" onclick="telechargerRessourcesSonVideo(this);"><img src="../../images/boutons/telecharger.png" /></a>
+	</div>
+	<!---------------------------------------------------------------->
+		<div id="item10" onclick="affCache(this);">
+	<p>&lt;     Cours 6 : compléments en CSS avancé</p>
+		</div>
+		<div id="content_item_10">
+		<h1>Compléments en CSS</h1>
+		<h2>1. Rappels sur la syntaxe des feuilles de style</h2>
+		<h3>1.1. descriptifs de l'objet sur lequel appliquer un style</h3>
+		<h4>Les sélecteurs simples :</h4>
+		<table>
+			<tr>
+				<th>Sélecteur de</th>
+				<th>exemple</th>
+				<th>lien vers tutoriel</th>
+			</tr>
+			<tr><td>de type (de balise)</td><td><code>p, div {<br/>
+					&nbsp;&nbsp;&nbsp;color : blue;<br/>}</code> </td>
+				<td><a 	href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_de_type"
+						target="_blank">voir</a></td>
+			</tr>
+			<tr><td>de classe</td><td><code>p.important, div.essentiel {<br/>
+					&nbsp;&nbsp;&nbsp;font-weight : bold;<br/>}</code> </td>
+				<td><a 	href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_de_classe"
+						target="_blank">voir</a></td>
+			</tr>
+			<tr><td colspan="3">Remarque : à l'attribut class peut être
+				affecté une liste de classes, <br/> les styles de chaque
+				classes lui seront attribués <br/>(avec les priorités s'il
+				y en a)</td>
+			</tr>
+			<tr><td>d'identifiant (id unique !)</td><td><code>p#important, #essentiel {<br/>
+					&nbsp;&nbsp;&nbsp;font-weight : bold;<br/>}</code> </td>
+				<td><a 	href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_d_ID"
+						target="_blank">voir</a></td>
+			</tr>
+			<tr><td>universel (*)</td><td><code>*[lang^=fr] {<br/>
+					&nbsp;&nbsp;&nbsp;color : blue;<br/>}</code> </td>
+				<td><a 	href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_universels"
+						target="_blank">voir</a></td>
+			</tr>
+			<tr>
+				<td>d'attribut </td>
+				<td>
+					<code>/* Les éléments &lt;a&gt; dont href finit par ".org" */
+						a[href$=".org"] {<br/>
+						&nbsp;&nbsp;&nbsp;font-weight : bold;<br/>}
+					</code>
+				</td>
+				<td><a 	href="https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_d_attribut"
+						target="_blank">voir</a>
+				</td>
+			</tr>
+		</table>
+		<h4>Plusieurs règles de priorité s'appliquent :</h4>
+		<ul>
+			<li>
+				<p>C'est chronologiquement la <strong><u>dernière
+				description</u></strong> de style qui est effectuée ;
+				de quelle couleur sera le fond du texte du titre
+				principal, si la page de style contient les lignes
+				suivantes ?</p>
+				<dl>
+					<dt>h1 {background-color: yellow;}</dt>
+					<dt>h1 {background-color: red;}</dt>
+				</dl>
+				<p 	onmouseover="this.style.backgroundColor='red';"
+					onmouseout="this.style.backgroundColor='black';">réponse</p>
+				<a 	href="https://www.w3schools.com/css/tryit.asp?filename=trycss_specificity1"
+					target="_blank">essayez !</a>
+			</li>
+			<li>
+				<p>Il y a trois façons non équivallentes de noter un sélecteur d'objet :</p>
+					<dl>
+						<dt>div#a {background-color: green;}</dt>
+						<dt>#a {background-color: yellow;}</dt>
+						<dt>div[id=a] {background-color: blue;}</dt>
+					</dl>
+				<p>Ici la division (div) d'identifiant a aura un fond
+				vert car, elle est prioritaire (plus spécifique) qu'un
+				attribut entre crochets. C'est une convention ...</p>
+				<a 	href="https://www.w3schools.com/css/tryit.asp?filename=trycss_specificity2"
+					target="_blank">essayez !</a>
+			</li>
+			<li>
+			</li>
+		</ul>
+
+		<h3>1.2. les pseudos classes</h3>
+		<p>Les pseudo classes </p>
+		<p>Cours en français (complet) avec exemples :
+		<a 	href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes#Liste_des_pseudo-classes_standards"
+			target="_blank">developer.mozilla.org</a></p>
+		<h3>1.3. les pseudo éléments</h3>
+		<h2>2. exercices </h2>
+		<p>Page d'exercices : <a href="./IUT/cours6/applications_css_approfondissements.html" target="_blank">cliquer ici</a></p>
+		<p>Pour afficher dans un nouvel onglet une page d'exercice, sélectionner là dans la liste et cliquer sur afficher.</p>
+		<form id="listeExoCours6">
+			<fieldset>
+				<legend>Afficher une page d'exercice :</legend>
+				<p>Sélectionner un exercice : </p>
+				<select>
+					<option></option>
+				</select>
+			</fieldset>
+		</form>
+
+		</div>
+	<!---------------------------------------------------------------->
+		<div id="item11" onclick="affCache(this);">
+	<p>&lt;     Cours 7 : les graphiques SVG et CANVAS</p>
+		</div>
+		<div id="content_item_11">
+	<h1>Les deux types de graphiques : SVG et CANVAS</h1>
+
+	<h2>1. Délimiter une ou plusieurs zones graphiques</h2>
+	<p>Deux balises sont destinées à délimiter des zones graphiques dans vos pages :</p>
+	<ul>
+		<LI>La balise &lt;<abbr title="Scalable Vector Graphics">SVG</abbr>&gt; permet de définir un
+		cadre rectangulaire au sein duquel peuvent être tracés des
+		figures géométriques (ovale, rectangle, polygone, lignes, ...)
+		; ces figures sont vectorielles ; c'est à dire redimentionnables
+		sans perte de qualité ;</LI>
+		<li>La balise &lt;canvas&gt; permet de presque tout faire ...
+		mais en javascript obligatoirement ; une fois défini, le cadre
+		canvas servira de toile pour y dessiner à peu près tout mais à
+		l'aide de code javascript.</li>
+	</ul>
+	<h4>Un cadre de graphique &lt;<abbr title="Scalable Vector Graphics">SVG</abbr>&gt; avec des figures et du texte :</h4>
+	<table><tr><td>
+	<svg width="600" height="300" id="exemple1SVG">
+		<text x="15" y="150" fill="red">Tracé de 4 disques superposés</text>
+		<circle cx="20" cy="50" r="30" stroke="green" stroke-width="4" fill="yellow" />
+		<circle cx="20" cy="50" r="25" stroke="red" stroke-width="4" fill="green" />
+		<circle cx="20" cy="50" r="20" stroke="yellow" stroke-width="4" fill="red" />
+		<circle cx="20" cy="50" r="15" stroke="blue" stroke-width="4" fill="orange" />
+		texte qui s'affiche si le canvas n'est pas pris en charge, car
+		c'est une implémentation liée à HTML5
+	</svg>	</td>
+		<td><table style="border:0;"> <!-- mini tableau pour ranger ... -->
+			<tr><td colspan="2"><h5>Tracer :</h5></td></tr>
+			<tr><td><label for="inpCarre">un carré </label>			</td><td><input type="button" value="carre" 	onclick="tracer(this);" id="inpCarre"		/></td></tr>
+			<tr><td><label for="inpRond">un rond </label>  			</td><td><input type="button" value="rond"  	onclick="tracer(this);"	id="inpRond"		/></td></tr>
+			<tr><td><label for="inpTriangle">un triangle </label>  	</td><td><input type="button" value="triangle"  onclick="tracer(this);"	id="inpTriangle"	/></td></tr>
+			<tr><td><label for="inpOvale">un ovale </label>  		</td><td><input type="button" value="ovale"  	onclick="tracer(this);"	id="inpOvale"		/></td></tr>
+			<tr><td><label for="inpMickey">mickey </label>  		</td><td><input type="button" value="mickey" 	onclick="tracer(this);"	id="inpMickey"		/></td></tr>
+			<tr><td><label for="inpTexteSVG">du texte </label>  		</td><td><input type="text"   value=""
+				placeholder="écrire votre texte ici"
+				onclick="ecrireSVG(this);"
+				ondblclick="ecrireSVG(this);ecrireSVG(this);"
+				onchange="ecrireSVG(this);"
+				id="inpTexteSVG"	/></td></tr>
+			<tr></tr>
+			<tr><td colspan="2"><input type="button" value="effacer tout"
+			                           onclick="document.getElementById('exemple1SVG').innerHTML = '';
+			                                    document.getElementById('codeSVG1').innerHTML = ''; " />
+			    </td></tr>
+			</table>
+		</td>
+		<td><h5>Code ajouté dans le innerHTML de ce cadre SVG :</h5>
+			<p id="codeSVG1"></p>
+		</td>
+	</tr>
+	</table>
+	<input type="button" value="debug" onclick="alert(Math.floor(Math.random() * nCol+1));" hidden/>
+	<h4>Des animations avec ou sans javascript pour les figures SVG :</h4>
+	<input type="range" min="-50" max="450" value="-20" id="inpSVG"
+	       onchange="changeSVG(this);"
+	       style="border:2px solid black;background:rgb(20,20,20);"/>
+	<svg width="600" height="300" id="exemple2SVG">
+		<circle cx="-20" cy="50" r="30" stroke="green" stroke-width="4" fill="yellow" />
+		<circle cx="-20" cy="50" r="25" stroke="red" stroke-width="4" fill="green" />
+		<circle cx="-20" cy="50" r="20" stroke="yellow" stroke-width="4" fill="red" />
+		<circle cx="-20" cy="50" r="15" stroke="blue" stroke-width="4" fill="orange" />
+		texte qui s'affiche si le canvas n'est pas pris en charge, car
+		c'est une implémentation liée à HTML5
+		<rect x="10" y="20" width="90" height="60">
+			<animate id="a1" attributeName="fill" from="red" to="blue" dur="3s" fill="freeze" />
+			<animate id="a4" attributeName="width" from="90" to="120" dur="1s" fill="freeze" />
+		</rect>
+		<rect x="10" y="120" width="90" height="60">
+			<animate id="a2" attributeName="fill" from="blue" to="yellow" begin="a1.end" dur="1s" fill="freeze" />
+		</rect>
+		<rect x="10" y="220" width="90" height="60">
+			<animate id="a3" attributeName="x" from="10" to="100" begin="a2.end" dur="1s" fill="freeze" />
+			<animate id="a5" attributeName="y" from="220" to="50" begin="a3.end" dur="1s" fill="freeze" />
+			<animate id="a6" attributeName="x" from="100" to="10" begin="a5.end" dur="1s" fill="freeze" />
+			<animate id="a7" attributeName="y" from="50" to="220" begin="a6.end" dur="1s" fill="freeze" />
+		</rect>
+		<!-- définition du gradient = dégradé progressif entre deux couleurs -->
+		<defs>
+			<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+			<stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+			<stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+			</linearGradient>
+		</defs>
+		<ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+		<text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+	</svg>
+	<p>Pour aller plus loin : <a href="https://www.w3schools.com/graphics/svg_examples.asp" target="_blank">exemples</a></p>
+	<h4>Compliqué ! <a href="https://www.w3schools.com/graphics/tryit.asp?filename=trysvg_ellipses" target="_blank">source</a></h4>
+	<svg width="50%" height="400px">
+<g id="R1" transform="translate(250 250)">
+  <ellipse rx="100" ry="100" opacity=".8">
+  <animateTransform attributeName="transform" type="rotate" dur="10s" from="0" to="360" repeatCount="indefinite" />
+  <animate attributeName="cx" dur="8s" values="-20; 220; -20;23;5" repeatCount="indefinite" />
+  <animate attributeName="ry" dur="3s" values="10; 60; 10" repeatCount="indefinite" />
+  <animate id="a1" attributeName="fill" from="red" to="green" dur="3s"  repeatCount="indefinite" />
+  </ellipse>
+</g>
+<use xlink:href="#R1" transform="rotate(72 390 150)" />
+<use xlink:href="#R1" transform="rotate(144 390 150)" />
+<use xlink:href="#R1" transform="rotate(216 390 150)" />
+<use xlink:href="#R1" transform="rotate(288 390 150)" />
+</svg>
+<!--------------------------------------------------------------------->
+	<h4>Un cadre de graphique canvas :
+		<a href="https://www.w3schools.com/graphics/canvas_clock_start.asp"
+		   target="_blank">une horloge</a></h4>
+
+<!--	<input type="button" value="Tracer un rectangle"
+	       onclick="tracerCanvas('rectangle');" /><br/>
+	<input type="button" value="Tracer un cercle"
+	       onclick="tracerCanvas('cercle');" /><br/> -->
+	<input type="button" value="Arrêter l'horloge" id="marcheArretH"
+	       onclick="arretDepart();" /><br/>
+<canvas id="canvas" width="800" height="400"
+style="background-color:#333">
+</canvas>
+	<canvas id="canvas1"></canvas>
+	<canvas id="canvas2"></canvas>
+	<canvas id="canvas3"></canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+/* var	canvas2 = document.getElementById("canvas1");
+var	canvas2 = document.getElementById("canvas2");
+var	canvas2 = document.getElementById("canvas3"); */
+
+var ctx = canvas.getContext("2d");
+/*var	ctx1 = canvas2.getContext("2d");
+var	ctx2 = canvas3.getContext("2d");
+var	ctx3 = canvas4.getContext("2d");*/
+
+var radius = canvas.height / 2;
+var arretC = false;
+
+ctx.translate(radius, radius);
+radius = radius * 0.90;
+
+var idClock = setInterval(drawClock, 1000);
+
+function arretDepart() {
+	arretC = !arretC;
+	if (arretC) {
+		clearInterval(idClock);
+		document.getElementById("marcheArretH").value ="Redémarrer l'horloge";
+	}
+	else {
+		idClock = setInterval(drawClock, 1000);
+		document.getElementById("marcheArretH").value ="Arrêter l'horloge";
+	}
+}
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+/*function tracerCanvas(forme); {
+	ctx.fillStyle = "rgb("+	Math.floor(Math.random() * 255)+
+					","+    Math.floor(Math.random() * 255)+
+					","+	Math.floor(Math.random() * 255)	 +")";
+	var x1, x2, y1, y2, r;
+
+	x1 = Math.floor(Math.random() * 200+10);
+	y1 = Math.floor(Math.random() * 40+10);
+	x2 = Math.floor(Math.random() * 200-50);
+	y2 = Math.floor(Math.random() * 75-100);
+	r  = Math.floor(Math.random() * 40+3);
+	switch (forme) {
+		case "rectangle" :
+			ctx.fillRect(	x1, y1, x2, y2);
+		break;
+		case "cercle" :
+			ctx.beginPath();
+			ctx.arc(x1, y1, r, 0, 2 * Math.PI);
+			ctx.stroke();
+		break;
+	}
+
+}*/
+</script>
+
+	<h2>2. comparaison et usage des cadres graphiques SVG et Canvas</h2>
+	<table>
+		<tr>
+			<th style="width:33%">Critère &#8595;  \ Type de graphique
+						&#8594;</th>
+			<th style="width:33%">Canvas</th>
+			<th style="width:34%">SVG</th>
+		</tr>
+		<tr>
+			<td>Résolution / changement d'échelle</td>
+			<td>statique : bitmap fixe</td>
+			<td>indépendent de la résolution / graphique vectoriel</td>
+		</tr>
+		<tr>
+			<td>Possibilité de réagir aux évènements du DOM</td>
+			<td>Non (bitmap), à retracer pour tout changement</td>
+			<td>Oui (onclick, onchange, etc ...)</td>
+		</tr>
+		<tr>
+			<td>rendu de texte stylé</td>
+			<td>pauvre</td>
+			<td>bien conçu surtout pour les cartes (Google Maps)</td>
+		</tr>
+		<tr>
+			<td>possibilité de sauvegarde sur fichier</td>
+			<td>oui en fichiers .png ou .jpg</td>
+			<td>calculs longs pour obtenir des effets complexes, copie
+			d'écran possible</td>
+		</tr>
+		<tr>
+			<td>compatible avec les jeux vidéo dynamiques</td>
+			<td>bien adapté aux rendus graphiques complexes</td>
+			<td>pas adapté car trop lourd en code et lent</td>
+		</tr>
+	</table>
+	<h2>3. exercices</h2>
+	<ol>
+		<li>définir un cadre SVG dont la largeur fait 80 % de votre page
+		et 400 pixels de hauteur ;</li>
+		<li>y faire tracer chacune des figures de bases :
+			<a href="https://www.w3schools.com/graphics/svg_intro.asp"
+		       target="_blank">tutos et exemples</a> :
+		       <dl>
+				<dt>Rectangle ;</dt>
+				<dt>Circel vs Ellipse ; quelle est la différence ? </dt>
+				<dt>Line ;</dt>
+				<dt>Polygone vs polyline  ;</dt>
+				<dt>Utiliser un éditeur <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html"
+		       target="_blank">SVG</a>, récupérer le code créé et coller
+		       le dans le code de votre page;</dt>
+				<dt>Explorer divers exemple de <a href="https://www.w3schools.com/graphics/svg_examples.asp" target="_blank" >filtres </a>et appliquez les sur une image ...;</dt>
+				<dt>Créer un titre dans une forme de votre choix et avec
+				un gradient de couleur en fond.</dt>
+				<dt>Récupérer, modifier et intégrer une animation SVG</dt>
+		       </dl>
+		</li>
+		<li>Définir trois canvas de 90% x 400px : id="canvas1"  ;
+		id="canvas2" ; id="canvas3" ;
+		superposés avec le css position:absolute; left:0; top:4000px;</li>
+		<li>copier et adapter les codes javascript présentés dans les
+		<a href="https://www.w3schools.com/graphics/canvas_drawing.asp"
+		target="_blank" >exemples w3school</a> ; les associer à chacun
+		des trois canvas ...(<a href="./IUT/cours7/canvasSuperposes.html"
+		                        target="_blank">solution</a>)</li>
+	</ol>
+	</div>
+	<!------------       fin de l'article    ----------------->
+	
+	</article>
+	<nav id="listeSommaire" >
+		
+	<!-- Le sommaire sera écrit ici au chargement de la page par une 
+							routine en javascript -->
+	
+	</nav>
+	</section>
+	<footer>
+		<h2>Liens utiles :</h2>
+		<ul>
+			<li>tutoriel <a href="https://www.w3schools.com" 
+			target="_blank">w3school pour HTML, CSS, JS, Python ;</a></li>
+			<li>bibliothèque d'icones et <a href="https://icon-icons.com" 
+			target="_blank">images libres.</a></li>
+			<li><a href="http://www.csszengarden.com/" target="_blank">
+				csszengarden.com</a> le site qui montre une (presque) 
+				infinité de styles en css/</li>
+		</ul>
+	</footer>
+<script>
+
+
+		var INVISIBLE = 'none', VISIBLE = 'block';
+		var statutVideoDesproges = INVISIBLE;
+		function afficheVideoDesproges(obj){
+
+			if (statutVideoDesproges == INVISIBLE) {
+				obj.value = "Cacher cette vidéo";
+				statutVideoDesproges = VISIBLE;
+			}
+			else {
+				obj.value = "Afficher la vidéo";
+				statutVideoDesproges = INVISIBLE
+			}
+			document.getElementById('videoCache').style.display = statutVideoDesproges;
+		}
+		function telechargerRessourcesSonVideo (lien) {
+			var select = document.getElementById("selectSonVideo");
+			var choice = select.selectedIndex;
+			var adresse = select.options[choice].text;
+			lien.path = "./IUT/Chapitre5/" + adresse ;
+			//texte = select.options[choice].text;
+			document.getElementById('debugLien').innerHTML = "lien = " + lien.path;
+		}
+</script>
+</body>
+</html>

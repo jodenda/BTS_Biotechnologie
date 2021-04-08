@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title> Blog de Joël Dendaletche </title>
+	<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page -->
+	<link rel="shortcut icon" href="icone.png" type="image/x-icon"/>
+	<link rel="icon" href="icone.png" type="image/x-icon"/>
+	
+	<script src="./sommaire.js"></script>
+	<script language="JavaScript">
+		var titrePage = "BTS Biotechnologie";
+		var aurevoir = "&Aacute; bientôt, revenez vite !";
+		//var id = setInterval(ma_fontion, 1000);
+		function titre(texte) 
+		{
+			document.title = texte;
+		}
+		function init() 
+		{
+			 // alert("debug init");
+			 construireListeSommaire ();
+		}
+	</script>
+	<script language="JavaScript" src="../../JS/affichages.js"></script>
+
+	
+	<meta name="author" content="Joël Dendaletche"/>
+	<meta name="created" content="2019-09-02"/>
+	<meta name="changed" content="2019-09-16"/>
+	<meta name="Company" content="Lycée La Découverte Decazeville 12300 Aveyron Occitanie France Terre"/>
+	<meta name="description" content="programme NSI première">
+	<meta name="keywords" content="Informatique">
+	<!-- la méta-donnée suivante rafraichit l'écran toute les minutes -->
+	<meta http-equiv="refresh" content="60">
+
+	
+	<!-- feuille de style externe -->
+	<link rel="stylesheet" type="text/css" 
+		href="./programme NSI/styleProgramme.css">
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/style.css">
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" 
+	      href="./CSS/styleQuiz.css">
+    <link rel="stylesheet" type="text/css" 
+          href="./CSS/simpleMenuHorizontal.css">
+	<!-- Définition du style local de la page : déconseillé ! -->
+	<style>
+	 /* Styles appliqués aux portions de code */
+		.attribut { color : black;
+			font-weight: bold; }
+		.balise { color : purple; }
+		.texte { color : blue ; }
+		.commentaire { color : green; }
+		div.codeHTML { 
+			border : 2px solid black;
+			padding : 10px;
+			text-align: left;
+			}
+		.caracteristique {
+			color : red;
+			font-weight: bold; 
+		}
+		.valeur {
+		color : orange;
+		}
+	</style>
+</head>
+<!-- la balise body délimite les instructions qui permettront d'afficher le contenu de la page web à l'écran -->
+<body onload="init();" onblur="titre(aurevoir);" 
+      onfocus="titre(titrePage);">
+<!-- ------------------------------------------------------------------>
+<header>
+		<small>Blog de <abbr title="Joël Dendaletche">jodenda</abbr> 
+		</small>
+<nav>
+	<ul class="menu">
+		<li><a href="./index.html">retour à la page d'accueil</a>
+		</li>
+		<li><a href="./BTS Biotech/BMGG/pageVideoBMGG.html" 
+		title ="des vidéos pour mieux comprendre la théorie &hellip;">
+			page Vidéos</a>
+		</li>
+	</ul>
+</nav>
+</header>
+<!-- ------------------------------------------------------------------>
+
+	<section>
+	<article>
+	<h1>Enseignement de BTS Biotechnologie</h1>	
+	
+	<ul>
+		<li>BTS Biotechnologie première année. Pages de cours et 
+		révision pour :<br/>
+			<ul>
+				<li><a 
+				href="./BTS Biotech/BMGG/page_expression_gene_prot.html"
+				>cours sur l'expression des gènes</a><br/></li>
+				<li><a href="./BTS Biotech/BSFP/chargeDesProteines.html"
+				>chromatographie d'échange d'ions</a><br/></li>
+			</ul>
+		</li>
+		<li><br/>BTS Biotechnologie deuxième année. Pages de cours et 
+		révision pour :<br/>
+			<ul>
+				<li><a href="./BTS Biotech/BMGG/coursBMGG_2.html">cours 
+				de génie génétique<br/></a></li>
+				<li><a 
+				href="javascript:alert('en construction ; \
+				à bientôt !');">quiz et annales</a></li>
+			</ul>
+		</li>		
+	</ul>
+		
+	<!-- Le sommaire sera écrit ici au chargement de la page par une routine en javascript -->
+	
+	</nav>
+	</section>
+	<hr/>
+	<footer>
+		<p>Liens utiles :</p>
+		<ul>
+			<li><a href="https://www.w3schools.com" target="_blank">tutoriel w3school pour HTML, CSS, JS, Python ;</a></li>
+			<li><a href="https://www.w3schools.com/css/css_howto.asp" target="_blank">section "how to" du tutoriel w3school pour <strong title="Cascade Style Sheet">CSS</strong> ;</a></li>
+			<li><a href="https://icon-icons.com" target="_blank">bibliothèque d'icones et images libres.</a></li>
+			
+		</ul>
+	</footer>
+	
+</body>
+</html>
