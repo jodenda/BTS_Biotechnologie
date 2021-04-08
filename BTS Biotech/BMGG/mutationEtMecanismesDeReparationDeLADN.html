@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8"> 
+	<title>Cours sur l'expression des gènes</title>
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" href="../../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" href="../../CSS/styleQuiz.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/simpleMenuHorizontal.css">
+
+<!-- ------------------------------------------------------------------>
+	<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page -->
+	<link rel="shortcut icon" href="http://jodenda.free.fr/BTS%20Biotech/BMGG/icone.ico" type="image/x-icon">
+	<link rel="icon" href="http://jodenda.free.fr/BTS%20Biotech/BMGG/icone.ico" type="image/x-icon">    
+	
+	<script language="JavaScript" src="../../JS/moteurQuiz.js"></script>
+	<script language="JavaScript" src="quizExpressionGenes.js"></script>
+	<script language="JavaScript" src="../../JS/affichages.js"></script> 
+	<script language="JavaScript">
+		var titrePage = "Cours sur l'expression des gènes";
+			var aurevoir = "À bientôt, revenez vite !";   //À = Alt + 0192
+ 			
+		function titre(texte) 
+		{
+			document.title = texte;
+		}
+		function init () { 
+		}	
+	</script>
+	<style>
+		abbr {
+			font-weight : bold;
+			
+		}
+		section {
+			display : block;
+			counter-reset: compteurFig;
+		}
+		figcaption {
+			float : right;
+		}
+		figcaption::before {
+		  counter-increment: compteurFig;
+		  content: "⮜ figure n° " counter(compteurFig) ": ";
+		}
+	</style>
+</head>
+
+<body onload="init();" onblur="titre(aurevoir);" onfocus="titre(titrePage);">
+<header>
+<p id="titrePrincipal">Régulation de l'expression des gènes codant des 
+protéines</p>
+<nav>
+	<ul class="menu">
+		<li><a href="http://jodenda.free.fr/index.html">retour à la page d'accueil</a></li>
+		<li><a href="javascript:voir('agenda');">voir l'agenda</a></li>
+		<li><a href="http://jodenda.free.fr/BTS%20Biotech/BMGG/pageVideoBMGG.html">page vidéos</a>
+		</li>
+		<li><a href="http://jodenda.free.fr/BTS%20Biotech/BMGG/quiz_expression_gene_prot.html" title="Quiz pour s'entraîner">Quiz pour s'entraîner</a>
+		</li>
+	</ul>
+</nav>
+</header>
+<section>
+	<h1>Altération de l'ADN et mécanismes de sa réparation</h1>
+	<p>Avant de commencer ce cours, il faut visionner la vidéo suivante :</p>
+	<iframe width="8"
+        height="6"
+        src=""
+        frameborder="2"
+        allow="">
+	</iframe>
+	
+	
+	
+	
+	
+	<figure>
+		<iframe width="560" height="315" 
+	        src="https://www.youtube.com/embed/z4ahsXFHcvI?autoplay=1&controls=0&start=6:42&end=7:28" 
+	        frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	        allowfullscreen>
+	</iframe>
+		<figcaption>Les différents catégories d'altération de l'ADN et les mécanismes de réparation associés : de 7 min 30 à 8 min 30</figcaption></figure>
+</section>
+
+<footer>
+	<p> <u>Sources et liens utiles :</u></p>
+	<ul class="menu">
+		<li><a href="" target="_blank">
+			
+		</a> </li>
+		
+		
+	</ul>
+</footer>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<article id="agenda" class="ressourceCachee" onkeydown="if (event.keyCode == 27) voir('agenda');">
+	<button class="btnQuitter" onclick="voir('agenda');">X
+	</button>
+	<iframe src="Cours%20sur%20l'expression%20des%20g%C3%A8nes_fichiers/embed.html" style="border: 0" scrolling="no" width="800" height="600" frameborder="0"></iframe>
+
+</article>
+
+
+
+
+</body></html>

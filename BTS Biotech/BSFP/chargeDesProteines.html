@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-language" content="fr">
+    
+    <title>Chromatographies TP/TD Biochimie des protéines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--------------------------------------------------------------------->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="../../CSS/styleCode.css">
+    <link rel="stylesheet" href="../../CSS/numerotationTitres.css">
+    <link rel="stylesheet"   href="../../CSS/ressourcesCachees.css">
+    <link rel="stylesheet"   href="../../CSS/colSyntaxiquePython.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/simpleMenuHorizontal.css">
+
+<!--------------------------------------------------------------------->
+   <style>
+		.droptarget {
+			width : 10%;
+			height : 40px;
+			flex : 1;
+			border : red 1px dashed;
+			text-align : center;
+		}
+		.origin {
+			width : 10%;
+			flex : 1;
+			border : green 1px dashed;
+			text-align : center;
+		}
+		table {
+				width : 100%;
+		}
+		table td:nth-child(4n+1) {
+				width : 15%;
+		}
+		section {
+			display : flex;
+		}
+		article {
+			flex : 4;
+		}
+		aside {
+			flex : 1;
+		}
+		.titrePage {
+			font-size 		: 200%		;
+			text-align 		: center	;
+			text-decoration : none		;
+		}
+		.question {
+			color 		: orange	;
+			background 	: darkblue	;
+		}
+		h1 {
+			display	: inline-block;
+		}
+    </style>
+<!--------------------------------------------------------------------->
+ 	<script src="../../JS/affichages.js"></script>
+	<script src="init.js"></script>
+</head>
+<!--------------------------------------------------------------------->
+<body onload="init();">
+<!--------------------------------------------------------------------->
+<header>
+	<div id="bandeau">
+		<i class="titrePage">Aide de cours en biochimie des protéines</i>
+	</div>
+<nav>
+	<ul class="menu">
+		<li><a href="../../index.html">retour à la page d'accueil</a></li>
+		<li><a href="javascript:voir('agenda');">voir l'agenda</a></li>
+		<li><a href="../../niveau_3BTS.html">retour à la page BTS</a></li>
+		</li> 
+	</ul>
+</nav>
+	</ul>
+</nav>
+</header>
+<!--------------------------------------------------------------------->
+<!--------------------------------------------------------------------->
+<section>
+	<article>
+		<p>Cette page est expérimentale, son but est de vous faire 
+		<mark>travailler pas à pas</mark> en ayant un accès direct aux 
+		ressources de wikipedia et d'autres sites spécialisés ; et en
+		vous permettant de faire des exercices et de <mark>rédiger
+		 des fiches de synthèse</mark>. Merci de vos retours et conseils
+		 sur le fond (erreurs à corriger) ou la forme (améliorer 
+		 l'ergonomie, la lisibilité ...) ;
+		 je ferai ce que je peux ! 😉 J.D. </p>
+		<h1>La chromatographie d'échange d'ion (<abbr title="Ion Exchange Chromatography">IEX</abbr>)</h1>
+		<h2>Principes théoriques</h2>
+		<details title="cliquer pour déplier le plan et son contenu"><summary>Principes théoriques</summary>
+		
+		<h3>Rappel sur la charge des protéines</h3>
+		<p>Les protéines sont constituées des 20 acides aminés assemblés
+		par le ribosome lors de la traduction et de quelques acides
+		aminés dérivés des 20 premiers par modification 
+		post-traductionnelle (hydroxy-proline, hydroxy-lysine, ...). <br/>
+		Certains ont des chaînes latérales hydrophobes, 
+		d'autres hydrophiles, et parmi ces derniers, certains ont des 
+		chaînes latérales partiellement ionisées, donc chargées</p>
+			<details><summary class="question">Quels sont les acides aminés chargés ?</summary>
+				<form>
+					<fieldset>
+						<legend><mark>Chaîne latérale chargée ?</mark></legend>
+							<label for="Alanine">Alanine : </label>
+							<input type="checkbox" id="Alanine" name="aaCharge" onclick="rep(this);"><span id="spAlanine"></span><br/>
+							<label for="Phenylalanine">Phenylalanine : </label>
+							<input type="checkbox" id="Phenylalanine" name="aaCharge" onclick="rep(this);"><span id="spPhenylalanine"></span><br/>
+							<label for="Leucine">Leucine : </label>
+							<input type="checkbox" id="Leucine" name="aaCharge" onclick="rep(this);"><span id="spLeucine"></span><br/>
+							<label for="Lysine">Lysine : </label>
+							<input type="checkbox" id="Lysine" name="aaCharge" onclick="rep(this);"><span id="spLysine"></span><br/>
+							<label for="AcideGlutamique">Acide Glutamique : </label>
+							<input type="checkbox" id="AcideGlutamique" name="aaCharge" onclick="rep(this);"><span id="spAcideGlutamique"></span><br/>
+							<label for="Arginine">Arginine : </label>
+							<input type="checkbox" id="Arginine" name="aaCharge" onclick="rep(this);"><span id="spArginine"></span><br/>
+							<label for="Tyrosine">Tyrosine : </label>
+							<input type="checkbox" id="Tyrosine" name="aaCharge" onclick="rep(this);"><span id="spTyrosine"></span><br/>
+					</fieldset>	
+				</form>
+				<h4>Sources wiki :</h4>
+				<ul>
+					<li><a href="https://fr.wikipedia.org/wiki/Alanine" title="alanine : -CH<sub>3</sub>" target="_blank" alt="-CH<sub>3</sub>" />alanine</li>
+					<li><a href="https://fr.wikipedia.org/wiki/Ph%C3%A9nylalanine" title="Phényl-alanine : -CH<sub>2</sub>)-C<sub>6</sub>H<sub>6</sub>" target="_blank" alt="-CH<sub>2</sub>)-C<sub>6</sub>H<sub>6</sub>" >Phényl-alanine</a></li>
+					<li><a href="https://fr.wikipedia.org/wiki/Lysine" title="Lysine : -(CH<sub>2</sub>)<sub>4</sub>-NH<sub>3</sub>" target="_blank" alt="-(CH<sub>2</sub>)<sub>4</sub>-NH<sub>3</sub>" >lysine</a></li>
+					<li><a href="https://fr.wikipedia.org/wiki/Leucine" title="Leucine : -CH<sub>2</sub>-CH-(CH<sub>3</sub>)<sub>2</sub>" target="_blank" alt="-CH<sub>2</sub>-CH-(CH<sub>3</sub>)<sub>2</sub>" >leucine</a></li>
+					<li><a href="https://fr.wikipedia.org/wiki/Acide_glutamique" title="acide glutamique : -(CH<sub>2</sub>)<sub>2</sub>-COOH" target="_blank" alt="-(CH<sub>2</sub>)<sub>2</sub>-COOH" >acide glutamique</a></li>
+					<li><a href="https://fr.wikipedia.org/wiki/Tyrosine" title="Tyrosine : -CH<sub>2</sub>-C<sub>6</sub>H<sub>6</sub>-OH" target="_blank" alt="-CH<sub>2</sub>)-C<sub>6</sub>H<sub>6</sub>-OH" >Tyrosine</a></li>
+					<li><a href="https://fr.wikipedia.org/wiki/Arginine" title="Arginine : -(CH<sub>2</sub>)<sub>3</sub>-NH-(NH<sub>2</sub>)<sub>2</sub><sup>+</sup>" target="_blank" alt="-(CH<sub>2</sub>)<sub>3</sub>-NH-(NH<sub>2</sub>)<sub>2</sub><sup>+</sup>" >arginine</a></li>
+				
+				</ul>
+			</details>
+		<script>
+		function rep(obj) {
+			var aaName = obj.id;
+			var reponse = "";
+			
+			if (obj.checked == true) {
+				switch (aaName) {
+					case "Alanine" : reponse = " C'est faux ! -CH<sub>3</sub> est hydrophobe ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/L-Alanin_-_L-Alanine.svg/120px-L-Alanin_-_L-Alanine.svg.png'/>";
+					break;
+					case "Phenylalanine" : reponse = " C'est faux ! -CH<sub>2</sub>-C<sub>6</sub>H<sub>6</sub>, (le benzène) est hydrophobe ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/L-Phenylalanin_-_L-Phenylalanine.svg/175px-L-Phenylalanin_-_L-Phenylalanine.svg.png' alt='phényl alanine'/>";
+					break;
+					case "Lysine" : reponse = " C'est vrai ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/L-Lysin_-_L-Lysine.svg/225px-L-Lysin_-_L-Lysine.svg.png' alt='lysine' /> est une <mark>base</mark> qui donne une <mark>ammonium primaire</mark>";
+					break;
+					case "Leucine" : reponse = " C'est faux ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/L-Leucin_-_L-Leucine.svg/175px-L-Leucin_-_L-Leucine.svg.png' alt='leucine' /> est un acide aminé à chaîne aliphatique donc hydrophobe.";
+					break;
+					case "AcideGlutamique" : reponse = " C'est vrai ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/L-Glutamins%C3%A4ure_-_L-Glutamic_acid.svg/175px-L-Glutamins%C3%A4ure_-_L-Glutamic_acid.svg.png' alt='acide glutamique' /> est un <mark>acide</mark> carboxylique</mark>";
+					break;
+					case "Tyrosine" : reponse = " C'est faux à pH physiologique de 7,2 et vrai au delà de pH = 10 ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/L-Tyrosin_-_L-Tyrosine.svg/225px-L-Tyrosin_-_L-Tyrosine.svg.png' alt='Tyrosine' /> est un groupement phénol ionisable à pH très alcalin";
+					break;
+					case "Arginine" : reponse = " C'est vrai ! <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/L-Arginin_-_L-Arginine.svg/langfr-225px-L-Arginin_-_L-Arginine.svg.png' alt='arginine' /> est une <mark>base</mark>";
+					/**/
+					break;
+					default : reponse = "________________";
+				}
+			}
+			else
+			{
+				reponse = "_______________";
+			}
+			document.getElementById("sp"+aaName).innerHTML = reponse;
+		}
+		</script>
+		<h3>Rappels sur la force des acides et des bases : phases fixes 
+		chargées </h3>
+		<p><dfn>Définition d'un <mark>acide</mark> : molécule capable 
+		de <mark>fournir</mark> un
+		ou plusieurs <mark>protons (H<sup>+</sup>)</mark> à une base ;</dfn></p>
+		<p><u><strong>remarques :</strong></u> :</p>
+		<ul><li>pour une base, c'est l'inverse !</li>
+			<li>les groupements chimiques échangeurs d'ions sont très
+			souvent des acides ou des bases ou leurs sels &hellip;</li>
+			<li><mark>H<sub>2</sub>O</mark> est à la fois un acide et 
+			une base ; <br/>
+		<p class="question">écrire les deux équations ;</p>
+				<details><summary>Proposition de réponse</summary>
+					<dl>
+						<dt>acide : H<sub>2</sub>O &#8646; H<sup>+</sup> 
+						+ HO<sup>-</sup> </dt>
+						<dd><small><a href="https://fr.wikipedia.org/wiki/Acide" 
+									  title="lien vers wikipedia sur les acides" 
+									  target="_blank">wiki sur les acides
+								   </a></small>
+						</dd>
+						<dt>base &nbsp;: H<sub>2</sub>O + H<sup>+</sup> 
+						&#8646;  H<sub>3</sub>O<sup>+</sup> </dt>
+						<dd><small><a href="https://fr.wikipedia.org/wiki/Base_(chimie)" 
+									  title="lien vers wikipedia sur les bases" 
+									  target="_blank">wiki sur les bases
+								   </a></small></dd>
+					</dl>
+				</details>
+			</li>
+		</ul> 
+		
+		<h4>Acides et bases fortes</h4>
+		<p><mark>AH<sub>n</sub> &rarr; A<sup>n-</sup> + n.H<sup>+</sup></mark>
+		<br/> de même <br/>
+		<mark>BOH &rarr; B<sup>n+</sup> + n.OH<sup>-</sup></p>
+		<ul><li>
+		<p>Les acides forts sont par exemple les acides chlorhydrique 
+		(HCl), sulfurique (H<sub>2</sub>SO<sub>4</sub>) qui sont 
+		entièrement ionisés dans l'eau et donnent respectivement :
+		une mole de protons (hydronium = proton + H<sub>2</sub>O = 
+		H<sub>3</sub>O<sup>+</sup>)</p> par mole d'HCl ; et deux moles
+		pour l'acide sulfurique. <br/> Leur réaction est brutale, totale 
+		et irréversible lorsqu'ils sont dissouts dans l'eau (attention 
+		les projections !) ; autrement dit, un acide fort donne tous
+		ses protons à l'eau accompagné d'un ion spectateur stable (pour
+		nos deux acides ce sera le chlore et le sulfate). Un <mark>acide 
+		ou une base forte</mark> ont dans leur équation réactionnelle une 
+		<mark>flèche à sens unique</mark> !</li>
+		<li><p>Les bases fortes utilisées en biologie sont souvent des 
+		oxydes de <u title="première et deuxième colonne de gauche 
+dans la table des éléments de Mendeleïev : Li Na K Mg Ca">métaux alcalins</u> :</p>
+				<ul>
+				<li>CaO (chaux vive) qui donne après hydratation la chaux éteinte 
+				Ca(OH)<sub>2</sub> ; elle n'est utilisée que pour mettre en 
+				évidence le gaz carbonique dans l'air &hellip;</li>
+				<li>la potasse ou KOH est utilisée pour saponifier les corps 
+				gras de type diacyl (phospholipides) ou triacyl glycérol (les 
+				triglycérides : huiles et graisses alimentaires) ;</li>
+				<li>c'est surtout la <mark>soude</mark> NaOH qui est la plus
+				utilisée pour alcaliniser les milieux de culture et pour 
+				ajuster le pH des tampons.</li>
+				</ul>
+		</li>
+		</ul>
+		</details>
+		
+		<h4>Acides et bases faibles</h4>
+		<p>Les acides et bases faibles sont des molécules dont l'acidité 
+		ou l'alcalinité	n'est pas complète : dans l'eau elles sont sous
+		forme d'un mélange entre leur forme acide et leur forme basique
+		</p>
+		<p>La formule du pKa permet de le montrer</p>
+		<dfn>Le pKa est un pH particulier à chaque acide ou base 
+		organique qui exprime le pH pour lequel il y a autant de 
+		formes acides (AH ou BH<sup>+</sup>) que de forme basique
+		(A<sup>-</sup> ou B).</dfn>
+		<p>En biologie, la plupart des acides faibles contiennent des 
+		groupements carboxyliques (-COOH) ou phosphoriques 
+		(-o-P(OH)<sub>2</sub>) et les bases sont essentiellement des 
+		composés de l'azote (-NH<sub>2</sub>).
+		</p>
+		
+		<h2>Mise en oeuvre technologique</h2>
+		<!------------------------------------------------------------->
+		<details title="cliquer pour déplier le plan et son contenu">
+			<summary>Mise en oeuvre technologique</summary>
+			<!--------------------------------------------------------->
+			<h3>Les différentes résines échangeuses d'ions</h3>
+			<!--------------------------------------------------------->
+			<h4>Les échangeuses d'anions</h4>
+			<!--------------------------------------------------------->
+			<h5>Les échangeuses d'anions fortes</h5>
+			<p>Elles sont dotées de groupements chimiques stables dont
+			la charge +  ne varie pas en fonction du pH ; la plus 
+			commune est de type Q (pour Ammonium Quaternaire) ; en effet 
+			un ammonium quaternaire n'est lié directement à aucun proton
+			échangeable, ses quatres partenaires sont souvent organiques
+			 ; par exemple : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Quaternary_ammonium_cation.svg/220px-Quaternary_ammonium_cation.svg.png" 
+			 alt="(CH<sub>3</sub>)<sub>3</sub>-N<sup>+</sup>-(CH<sub>2</sub>)<sub>n fois</sub>"
+			 title="(CH<sub>3</sub>)<sub>3</sub>-N<sup>+</sup>-(CH<sub>2</sub>)<sub>n fois</sub>"/></p>
+			 <p>Les résines Q sont utilisées par exemple pour purifier
+			 l'ADN, l'ARN et les protéines acides ; l'élution se fait
+			 préférentiellement par compétition.</p>
+			 <p class="question">Proposer une composition de tampon 
+			 d'élution dans ce cas.</p>	
+			 <details><summary>proposition de réponse</summary>
+			  L'élution se fait avec un tampon riche en cathions 
+			 (NaCl concentré tout simplement).
+			 </details>
+			 
+			<!--------------------------------------------------------->
+			<h5>Les échangeuses d'anions faibles</h5>
+			<p>Ce sont des amines primaire, secondaire ou tertiaires, 
+			donc des acides faibles. Par conséquent leur charge varie
+			en fonction du pH et donc leur capacité de rétention.
+			</p>
+			<p class="question">Est-ce que leur capacité de rétention
+			augmente si le pH augmente ?</p>
+			<details><summary>Proposition de réponse</summary>
+			<p>NON ! : à pH très acide la charge des bases faible est 
+			maximale car elles sont majoritairement sous leur forme
+			ammonium positif ; donc quand le pH augmente, leur charge
+			diminue et leur capacité d'échange aussi !</p>
+			</details>
+			<p>Une des résines  de ce type les plus utilisées, est le
+			DEAE cellulose <a 
+href="https://fr.wikipedia.org/wiki/Cellulose_di%C3%A9thylamino%C3%A9thyle" 
+			target="_blank" alt="">
+			<img 
+src="https://upload.wikimedia.org/wikipedia/commons/9/98/Diethylaminoethylcellulose.png" 
+			alt="résine DEAE cellulose" title="résine DEAE cellulose">
+			</a></p>
+			<p class="question">Le DEAE est il un ammonium primaire, 
+			secondaire ou tertiaire ?</p>
+			<details><summary>Réponse</summary>
+			<p>Tertiaire puisqu'il y a trois molécules organiques liées 
+			à l'azote.</p></details>
+			<!--------------------------------------------------------->
+			<h4>Les échangeuses de cathions</h4>
+			<p>Ce sont des résines (polymères) chargées négativement.</p>
+			<!--------------------------------------------------------->
+			<h5>Les échangeuses de cathions fortes</h5>
+			<p>Pour la plupart elles sont contiennent des groupements
+			sulfates (ion spectateur de l'acide fort sulfurique), dont 
+			la charge est permanente et ne dépend pas du pH ! </p>
+			<!--------------------------------------------------------->
+			<h5>Les échangeuses de cathions faibles</h5>
+			<p>Ces résines sont souvent constituées de groupements 
+			acides carboxyliques liés covalemment à une résine : 
+			carboxy-méthyl cellulose par exemple.</p>
+
+		</details>
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="pHi" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('sequencesSABetLyso');">X
+	</button>
+
+		<h1>point isolélectrique</h1>
+	
+		<h2>Sources sur le net :</h2>
+		<ul>
+			<li><a href="https://fr.wikipedia.org/wiki/Point_iso%C3%A9lectrique" 
+			       target="_blank" 
+			       title="point isoélectrique d'après wikipédia">
+			       point isoélectrique d'après wikipédia</a>
+			</li>
+			<li><a href="" target="_blank" title=""></a></li>
+			<li><a href="" target="_blank" title=""></a></li>
+			<li><a href="" target="_blank" title=""></a></li>
+		</ul>
+	</details>
+	<details title="cliquer pour déplier le plan et son contenu">
+		<summary><h2>Mise en pratique : technologie</h2></summary>
+		<details title="cliquer pour déplier le plan et son contenu">
+		<summary><h3>L'échange d'anions</h3></summary>
+		
+		</details>
+		<details title="cliquer pour déplier le plan et son contenu">
+		<summary><h3>L'échange de cathions</h3></summary>
+		
+		</details>
+	</details>
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="tdBioinfoPhi" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('tdBioinfoPhi');">X
+	</button>
+		<h2>TD de biochimie / bioinformatique : prévoir un pHi</h2>
+		<p>Pour purifier une protéine connue par chromatographie 
+		d'échange d'ions, il est préférable de faire en sorte qu'elle
+		fasse partie des protéines retenues sur la phase fixe ; pour cela
+		il faut que le tampon soit à un pH déterminé par la charge
+		nette de la protéine, la charge de la phase fixe</p>
+		
+		<p>Le lien suivant (<a href="http://isoelectric.org/" 
+		   target="_blank" 
+		   title="logiciel en ligne pour le calcul de pHi">cliquer ici
+		   </a>) vous amènera sur la page d'un
+		site qui permet de calculer le pHi probable d'une protéine en 
+		fonction de sa séquence en acides aminés.</p>
+		<h3>questions préliminaires</h3>
+		<p class="question">Q1 : sous quel format bioinformatique 
+		doit-on indiquer la séquence en acides aminés ?</p>
+			<details><summary>Proposition de réponse</summary>
+				<p>Le format 
+				<a href="https://fr.wikipedia.org/wiki/FASTA_(format_de_fichier)" 
+				   target="_blank" title="le format FASTA sur Wikipedia">FASTA</a>
+					permet de présenter une séquence d'acides nucléiques (ARN 
+					ou ADN) ou une séquence protéique sous forme compacte 
+					à l'aide d'un 
+					<a href="https://fr.wikipedia.org/wiki/FASTA_(format_de_fichier)#Repr%C3%A9sentation_de_s%C3%A9quences" 
+					   target="_blank" title="code FASTA à une lettre">code 
+					   à une lettre</a> ; un format FASTA présente <mark>seulement
+					   deux lignes</mark> : - la première qui <mark>commence 
+					   par le symbole inférieur "&lt;"</mark> suivi la
+					   plupart du temps d'informations minimales dont 
+					   <a href="https://fr.wikipedia.org/wiki/Num%C3%A9ro_d%27accession_(bioinformatique)" 
+					      target="_blank" title="Accession number">
+					   le numéro d'accession (numéro d'ordre)</a> ou 
+					   <em>Accession number</em> en anglais  </p> ; et
+					   la seconde qui est la séquence orientée 
+					   <em>in extenso</em> : les acides nucléiques vont de
+					   5' en haut à gauche vers 3' en bas à droite (sens
+					   de la réplication de l'ADN, et de la synthèse des 
+					   ARN ...) ; les protéines de l'acide aminé NH<sub>2
+					   </sub> terminal (souvent la méthionine !) à gauche
+					   vers l'acide aminé COOH terminal (le dernier ajouté
+					   par le ribosome pendant la synthèse protéique).
+			</details>
+		<p  class="question">Q2 : comment et où trouver les séquences de 
+		protéines ?</p>
+		<details><summary>Proposition de réponse</summary>
+			<p>Les séquence de protéines sont accessibles dans des bases
+			de données spécialisées via un portail de bioinformatique.
+			Le <mark>portail</mark> (<em>gate</em> en anglais) le plus 
+			connu et utilisé
+			est le site <a href="https://www.ncbi.nlm.nih.gov/" 
+			               target="_blank" 
+			               title="portail ncbi">
+			<abbr title="National Center for Biotechnology Information">
+				ncbi</abbr></a> 
+			qui est un <mark>moteur de recherche
+			spécialisé</mark> dans les données biologiques.</p>
+		</details>
+		<p class="question">Q3 : décrire comment rechercher la séquence 
+		FASTA 
+		de l'albumine bovine (<em>bos taurus</em>) et celles du lysozyme
+		et de l'ovalbumine de l'oeuf de poule (rechercher le nom 
+		scientifique sur wiki ; les protéines sont écrites en englais 
+		sans e à la fin du mot : <em>ovalbumin</em>)</p>
+		<details><summary>Proposition de réponse</summary>
+		
+		<ol>
+			<li>aller sur la page principale de 
+					    <a href="https://www.ncbi.nlm.nih.gov/" 
+			               target="_blank" 
+			               title="portail ncbi">
+			<abbr title="National Center for Biotechnology Information">
+				ncbi</abbr></a> ;</li>
+			<li>dans la liste déroulante <em>All Databases</em> 
+			sélectionner l'item <em>Protein ;</em></li>
+			<li>dans la barre de requète (avant le bouton <em>search
+			</em>), 
+			taper les mots clefs suivant : "<em>bos taurus albumin</em>"
+			, puis cliquer sur <em>Search</em> qui lance la requète 
+			(pose la question au serveur) ;</li>
+			<li>cliquer sur le lien "FASTA" de la première et bonne 
+			réponse : alumin [bos Taurus] 607 aa ; accession : 
+			AAA51411.1 ; enregistrer cette séquence au format FASTA dans 
+			bloc note pour plus tard ;</li>
+			<li>faire de même pour le lysozyme du blanc d'oeuf de poule 
+			;</li> 
+			<li>on trouve par exemple : <mark>lysozyme [Gallus gallus] 
+			147 aa protein Accession: ACL81750.1</mark> :
+			<pre>
+>ACL81750.1 lysozyme [Gallus gallus]
+MRSLLILVLCFLPLAALGKVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTD
+SGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQA
+WIRGCRL			
+			
+			</pre></li>
+		</ol>
+#######################################################################
+		site pour calculer le pHi : <a href="http://ipc2.mimuw.edu.pl/" 
+			               target="_blank" 
+			           title="logiciel de calcul de pHi">cliquer ici</a> 
+		</details>
+		
+		<p class="question">Q4 : chercher et stocker les séquences au 
+		format FASTA des protéines :<br/>albumine humaine, albumine de 
+		boeuf, lysozyme </p>
+		<details><summary>Proposition de réponse</summary>
+		<button 
+		onclick="voir('tdBioinfoPhi');voir('sequencesSABetLyso');"
+		>accès aux séquences</button>
+		</details>
+		
+		<p class="question">Q5 : prédire le pHi du lysozyme et de 
+		l'ovalbumine à l’aide du logiciel en ligne suivant : 
+			<a href="http://ipc2.mimuw.edu.pl/" 
+			               target="_blank" 
+			           title="logiciel de calcul de pHi">cliquer ici</a> 
+			               ; quel sont les pHi ?<br/>Ces pHi sont-ils
+			cohérents avec les résultats obtenu en TP ?</p>
+		<details><summary>Proposition de réponse</summary>
+			<table>
+				<tr>
+					<th>paramètres \ protéines</th><th>ovalbumine</th>
+					<th>lysozyme</th></tr>
+				<tr>
+					<td>pHi</td>
+					<td>5,09</td>
+					<td>8,37</td></tr>
+				<tr>
+					<td>nombre de charges à pH = 7,4 (cytoplasme)</td>
+					<td> -14,8 </td>
+					<td> + 5,2</td></tr>
+				<tr>
+					<td>nombre d'aa acides (Asp, Glu) </td>
+					<td>14 et 33</td>
+					<td>7, 2</td></tr>
+				<tr>
+				<tr>
+					<td>% d'aa acides sur total </td>
+					<td>47 / 386  = 12,2 % </td>
+					<td>9 / 147 = 6,1 %</td></tr>
+				<tr>
+					<td>nombre d'aa basiques (lys, arg, his)</td>
+					<td>42 / 386   = 10,9 %</td>
+					<td>19 / 147 = 13 % deux fois plus que d'acides !
+					</td>
+				</tr>
+				<tr>
+					<td>Concusion :</td>
+					<td>protéine acide donc négative aux pH usuels<br/>
+					donc c'est cohérent aec le fait que l'ovalbumine
+					sorte au volume mort avec les autres protéines
+					non retenues par le support échangeur de cations</td>
+					<td>protéine basique donc positive aux pH utilisés
+					<br/> donc c'est cohérent avec le fait expérimental
+					qui montre que cette protéine est retenue par 
+					la phase stationnaire négative (sulfate).
+					</td>
+				</tr>
+			</table>
+		</details>
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('sequencesSABetLyso');">X
+	</button>
+
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="sequencesSABetLyso" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('sequencesSABetLyso');">X
+	</button>
+
+<pre>
+>AAA51411.1 albumin [Bos taurus] 607 aa
+MKWVTFISLLLLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFKGLVLIAFSQYLQQCPFDEHVKLVNEL
+TEFAKTCVADESHAGCEKSLHTLFGDELCKVASLRETYGDMADCCEKQEPERNECFLSHKDDSPDLPKLK
+PDPNTLCDEFKADEKKFWGKYLYEIARRHPYFYAPELLYYANKYNGVFQECCQAEDKGACLLPKIETMRE
+KVLASSARQRLRCASIQKFGERALKAWSVARLSQKFPKAEFVEVTKLVTDLTKVHKECCHGDLLECADDR
+ADLAKYICDNQDTISSKLKECCDKPLLEKSHCIAEVEKDAIPENLPPLTADFAEDKDVCKNYQEAKDAFL
+GSFLYEYSRRHPEYAVSVLLRLAKEYEATLEECCAKDDPHACYSTVFDKLKHLVDEPQNLIKQNCDQFEK
+LGEYGFQNALIVRYTRKVPQVSTPTLVEVSRSLGKVGTRCCTKPESERMPCTEDYLSLILNRLCVLHEKT
+PVSEKVTKCCTESLVNRRPCFSALTPDETYVPKAFDEKLFTFHADICTLPDTEKQIKKQTALVELLKHKP
+KATEEQLKTVMENFVAFVDKCCAADDKEACFAVEGPKLVVSTQTALA
+
+>AAA98797.1 albumin [Homo sapiens]
+MKWVTFISLLFLFSSAYSRGVFRRDAHKSEVAHRFKDLGEENFKALVLIAFAQYLQQCPFEDHVKLVNEV
+TEFAKTCVADESAENCDKSLHTLFGDKLCTVATLRETYGEMADCCAKQEPERNECFLQHKDDNPNLPRLV
+RPEVDVMCTAFHDNEETFLKKYLYEIARRHPYFYAPELLFFAKRYKAAFTECCQAADKAACLLPKLDELR
+DEGKASSAKQRLKCASLQKFGERAFKAWAVARLSQRFPKAEFAEVSKLVTDLTKVHTECCHGDLLECADD
+RADLAKYICENQDSISSKLKECCEKPLLEKSHCIAEVENDEMPADLPSLAADFVESKDVCKNYAEAKDVF
+LGMFLYEYARRHPDYSVVLLLRLAKTYETTLEKCCAAADPHECYAKVFDEFKPLVEEPQNLIKQNCELFE
+QLGEYKFQNALLVRYTKKVPQVSTPTLVEVSRNLGKVGSKCCKHPEAKRMPCAEDYLSVVLNQLCVLHEK
+TPVSDRVTKCCTESLVNRRPCFSALEVDETYVPKEFNAETFTFHADICTLSEKERQIKKQTALVELVKHK
+PKATKEQLKAVMDDFAAFVEKCCKADDKETCFAEEGKKLVAASQAALGL
+
+>AAB59956.1 ovalbumin [Gallus gallus]
+MGSIGAASMEFCFDVFKELKVHHANENIFYCPIAIMSALAMVYLGAKDSTRTQINKVVRFDKLPGFGDSI
+EAQCGTSVNVHSSLRDILNQITKPNDVYSFSLASRLYAEERYPILPEYLQCVKELYRGGLEPINFQTAAD
+QARELINSWVESQTNGIIRNVLQPSSVDSQTAMVLVNAIVFKGLWEKAFKDEDTQAMPFRVTEQESKPVQ
+MMYQIGLFRVASMASEKMKILELPFASGTMSMLVLLPDEVSGLEQLESIINFEKLTEWTSSNVMEERKIK
+VYLPRMKMEEKYNLTSVLMAMGITDVFSSSANLSGISSAESLKISQAVHAAHAEINEAGREVVGSAEAGV
+DAASVSEEFRADHPFLFCIKHIATNAVLFFGRCVSP
+
+>ACL81750.1 lysozyme [Gallus gallus]
+MRSLLILVLCFLPLAALGKVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTD
+SGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQA
+WIRGCRL
+
+</pre>
+<button 
+		onclick="voir('sequencesSABetLyso');voir('tdBioinfoPhi');"
+		>revenir au TD</button>
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('sequencesSABetLyso');">X
+	</button>
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('sequencesSABetLyso');">X
+	</button>
+	</article>
+<!--------------------------------------------------------------------->
+	<article id="reserveCodeUtile" class="ressourceCachee">
+	<button class="btnQuitter" onclick="voir('sequencesSABetLyso');">X
+	</button>
+		<h2>Sources sur le net :</h2>
+		<ul>
+			<li><a href="" 
+			       target="_blank" ></a></li>
+			<li><a href="" target="_blank" title=""></a></li>
+			<li><a href="" target="_blank" title=""></a></li>
+			<li><a href="" target="_blank" title=""></a></li>
+		</ul>
+	
+	</article>
+<!--------------------------------------------------------------------->
+	<aside>
+		<h1>Menu interne de la page :</h1>
+		<dl>
+			<dt><a href="javascript:voir('tdBioinfoPhi');" target="_self" 
+				   title="TD de bioinformatique sur la prévision du pHi d'une protéine">
+				   TD de bioinformatique sur la prévision du pHi d'une protéine
+				</a>
+			</dt>
+			<dt><a href="javascript:" target="_blank" title=""></a></dt>
+			<dt><a href="javascript:" target="_blank" title=""></a></dt>
+			<dt><a href="" target="_blank" title=""></a></dt>
+			<dt><a href="" target="_blank" title=""></a></dt>	
+		</dl>
+		<hr/>
+		<h1>&Eacute;léments de corrigé :</h1>
+		<dl>
+			<dt><a href="javascript:voir('sequencesSABetLyso');" target="_self" 
+				   title="séquence FASTA de la SAB, SAH et lysozyme de poule">
+				   <p>séquence FASTA de la SAB, SAH et lysozyme de poule ;</p>
+				</a>
+			</dt>
+			<dt><a href="javascript:" target="_blank" title=""></a></dt>
+			<dt><a href="javascript:" target="_blank" title=""></a></dt>
+			<dt><a href="" target="_blank" title=""></a></dt>
+			<dt><a href="" target="_blank" title=""></a></dt>	
+		</dl>
+
+	</aside>
+</section>
+<!--------------------------------------------------------------------->
+<!--------------------------------------------------------------------->
+<footer>
+	<p> <u>Sources et liens utiles :</u></p>
+	<ul class="menu">
+		<li><a href="https://rnbio.sorbonne-universite.fr/sites/default\
+		/files/animations/bio_mol/operon_lactose_4/operon_lactose_4.html"  
+		       target="_blank">animation sur l'opéron lactose</a> 
+		       en présence de lactose (en français !)</li>
+		<li><a href="https://rnbio.upmc.fr/bio-mol_operon-\
+		lactose_operon2"  
+		       target="_blank">opéron lactose (en français !)</a></li>
+		<li><a href="http://www.vcell.science/project/lacoperon" 
+		target="_blank">lactose operon animation</a></li>
+		<li><a href="https://unicode.org/emoji/charts/full-\
+		emoji-list.html" 
+		       target="_blank">site officiel des émoticons</a></li>	
+		<li><a href="https://www.bioutils.ch/" 
+		       target="_blank" title="protocoles et cours en ligne en \
+		       génie génétique">bio outils</a></li>	
+	</ul>
+
+</footer>
+</body>
+</html>

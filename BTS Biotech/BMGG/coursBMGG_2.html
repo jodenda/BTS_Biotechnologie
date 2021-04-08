@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title> cours de génie génétique (BTS biotech 2) </title>
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" href="../../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" href="../../CSS/styleQuiz.css">
+
+<!-- ------------------------------------------------------------------>
+	<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page -->
+	<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
+	<link rel="icon" href="icone.ico" type="image/x-icon"/>
+	
+	<script language="JavaScript" src="../../JS/moteurQuiz.js"></script>
+	<script language="JavaScript" src="quizExpressionGenes.js"></script>
+ 	<script language="JavaScript" src="../../JS/affichages.js"></script>
+
+	<script language="JavaScript"></script>
+	<style></style>
+</head>
+
+<body onload="init();" onblur="titre(aurevoir);" onfocus="titre(titrePage);">
+
+<h1>Techniques de manipulations génétiques</h1>
+<details><summary>Introduction</summary>
+<p>
+	<dfn>Le <b><u>génie génétique</u></b> correspond à l’<b><u>ensemble 
+	des techniques</u></b> qui permettent de <b><u>manipuler le génome 
+	des être vivants et des virus</u></b> en procédant <em>in vitro</em> ; 
+	</dfn><br/>
+Cela rend possible de modifier le génome d’un être vivant (ou d’un 
+virus) en y introduisant un ou plusieurs éléments génétiques  provenant 
+d’une autre unité biologique (cf. exemples)<br/>
+	Le <mark>clonage</mark> est la technique de  base du génie génétique
+	. </p>
+
+<p><dfn><b><u>Définition du clonage</u></b>  : <mark>amplification d'une 
+séquence d'acide nucléique (l'<b><u>insert</u></b>)</mark> provenant 
+d'un <b><u>organisme donneur</u></b> dans un autre <b><u>organisme hôte
+</u></b> (receveur) par obtention (et amplification) d'un <mark>clone 
+cellulaire de l'hôte</mark>. Le transfert du matériel génétique passe 
+obligatoirement par une ou plusieurs étapes de manipulations <em>in 
+vitro (ex vivo)</em>.</dfn></p>
+
+<h1>Les grandes étapes du clonage vont servir de fil conducteur à ce 
+cours :</h1>
+
+<ol>
+<li>Préparation de l'ADN insert (à cloner).
+<br/>
+quatre origines possibles : <ol  type="I">
+<li>A.D.N.c (c pour complémentaire) de l'ARNm ; </li>
+<li>ADN amplifié par PCR ;</li>
+<li>d’origine naturelle (après purification) ;</li>
+<li>synthétique. </li></ol>
+
+<p>Cet ADN à cloner, est digéré par une ou deux enzymes de restriction  
+ou bien contient à ses extrémités des séquences connues qui serviront 
+dans un processus semblable à la recombinaison homologue avec des 
+séquences identiques (homologues) dans le site de clonage du vecteur 
+choisi.</p></li>
+	
+<li>En parallèle, il faut choisir (les outils adaptés au but recherché) 
+et préparer (produire, purifier) le <mark>vecteur de clonage</mark> : 
+	<ul  type="I"  type="I">
+		<li>plasmide</li>  
+		<li>phage et virus eucaryotes ;</li> 
+		<li>phagémide (plasmide chimère possédant un élément phagique) ;</li> 
+		<li>chromosome artificiel (bactérien ou eucaryote). </li> 
+	</ul>
+<p>Ce vecteur est digéré par une ou deux enzymes de restriction 
+compatibles avec celles utilisées sur l’insert ou bien possède dans son 
+site de clonage deux séquences homologues à celles qui flanquent 
+l'insert à cloner par recombinaison.</p></li>
+
+<li><mark>Ligation</mark> de l'insert dans le vecteur de clonage : 
+bouts francs, préparation de bouts collants, polarité de l'insert, 
+déphosphorylation, tailing, … ou bien recombinaison (système GateAway, 
+In-fusion, réaction de Gibs …).</li>
+
+<li><mark>Transformation / transfection</mark> : utilisation de 
+techniques physico chimiques (CaCl2 + froid + choc thermique, HPO<sub>
+4</sub>Ca, 
+polycation), électroporation (schéma), lipofection sur cellules sans 
+paroi, projection de particules metalliques chargées d'ADN vecteur 
+(biolistique), injection directe dans l'ovocyte (animaux transgéniques), 
+utilisation d'un virus modifié, <i>etc</i>. &hellip;</li>
+
+<li>Mise en culture pour sélection des clones <span title>transformés/
+transfectés</span> et recombinants (marqueurs de transformation/
+transfection, de recombinaison).</li>
+
+<li>Utilisation de la séquence clonée : séquençage, mutagenèse dirigée 
+(utilisation de la PCR et des endonucléases à façon), production de 
+protéines, détection d'exon, knock-out (et Kin) de gène, insertion 
+dans un génome par recombinaison (transgénèse, thérapie génique), 
+&hellip ;</li>
+ </ol>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------   transformation ou transfection  -------------- -->
+</details>
+<h1>Transfert du mélange de ligation dans une cellule hôte : 
+<mark>transformation ou transfection</mark></h1>
+<details><summary><a href="javascript:voir('transfection');">
+transformation ou transfection</a></summary>
+	<p>En génie génétique la <b><u>transfection</u></b> (terme 
+	générique) désigne toutes les opérations permettant de faire 
+	pénétrer une molécule d'ADN dans une cellule pour laquelle il est 
+	étranger (d'une autre origine). La transfection peut utiliser des 
+	moyens naturels (<b><u>transformation</u></b>, <b><u>transduction
+	</u></b> [injection par un système viral], <b><u>conjugaison</u>
+	</b>, <b><u><i>Agrobacterium tumefaciens</i></u></b> [pour les 
+	plantes uniquement]) ou artificiels (bombardement, électroporation, 
+	liposomes, molécules chimiques transporteuses, ...).
+L'ADN étranger peut exprimer ou non (on peut cloner des séquences qui 
+ne sont pas des gènes) des gènes qu'il contient de manière <b><u>
+	constitutive</u></b> (AMPR par exemple, c'est rarement le cas) ou 
+	<b><u>régulée</u></b> (sous la dépendance de facteurs d’induction 
+	contrôlée : [<abbr>I.P.T.G.</abbr> ; métabolite]). Cet ADN est 
+	souvent associé à une molécule d'ADN porteuse (le <b><u>vecteur 
+	de clonage</u></b>) qui lui confère certaines propriétés (
+	stabilité : réplication autonome ; sélectivité : présence d'au 
+	moins un marqueur de sélection [résistance à l'ampicilline]; 
+	manipulable au moyens de sites uniques de restriction).
+
+Un organisme génétiquement modifié sera créé dès qu'il aura reçu un 
+ADN codant ou non qui n'a encore jamais existé dans son espèce, ou 
+bien lorsque l’on aura utilisé une technique artificielle pour le 
+transfecter. Tous les <b><u><abbr 
+title="Organisme Génétiquement Modifié ; GMO in english">O.G.M.</abbr>
+</u></b> doivent être 
+déclarés aux autorités compétentes (commission de génie génétique) 
+et faire l'objet d'un confinement approprié pour éviter leur 
+dissémination dans l'environnement. Son A.D.N. doit être détruit 
+avant rejet des déchets dans l’environnement.</p>
+<h2>Méthode physico-chimiques</h2>
+<h3>Méthodes chimiques</h3>
+<h4>Méthodes au chlorure de calcium et choc thermique</h4>
+	<details><summary>CaCl<sub>2</sub> et choc thermique sur cellules 
+	compétantes</summary>
+<p>Cette méthode est la plus ancienne, et est toujours employée pour les 
+bactéries de type Gram- (E. coli).
+Avant sa transformation la bactérie est rendue <b><u>compétente</u></b> 
+; c'est à dire que l'on s'assure que son état physiologique garantira 
+une <b><u>efficacité maximale</u></b> de <b><u>transformation (
+exprimée en nombre 
+d'U.F.C. par µg d'ADN transformant)</u></b>. Pour cela il faudra obtenir 
+des cellules venant de se diviser plusieurs fois au cours de la <b><u>
+	phase exponentielle</u></b> de croissance : à ce moment les 
+	membranes sont étirées au maximum et la paroi cellulaire est plus 
+	perméable (un vieille paroi est plus réticulée, plus consolidée), 
+	d'autre part la cellule est dans un état énergétique lui permettant 
+	de résister au mieux aux traitements traumatisants de la 
+	transformation. Pour compléter le traitement, les cellules 
+	compétentes refroidies sont mises en contact d'une solution 
+	concentrée de <b><u>chlorure de calcium</u></b>. <br/><hr/>
+Le <b><u>calcium chélate les phospholipides</u></b> des membranes et 
+participe à la <b><u>rigidification</u></b> des membranes <b><u>à 
+froid</u></b>. De plus le calcium <b><u>neutralise l'ADN transformant
+</u></b> et lui permet de sédimenter au contact de la membrane avant 
+sa pénétration.<br/>
+Techniquement il est très important d’utiliser du matériel refroidi 
+pour éviter tout choc thermique prématuré.<br/>
+
+La pénétration de l'ADN transformant se fait au cours du <b><u>choc 
+thermique</u></b> qui crée des pores dans les membranes qui laisse 
+entrer l'ADN, mais également laisse sortir des nutriments vitaux.<br/>
+La mortalité des cellules est très importante lors du choc thermique.
+<br/>
+
+En résumé cette transformation qui utilise des cellules rendues 
+compétentes consiste en deux étapes :<br/>
+<ul>
+    <li>la neutralisation des charges de l'ADN par complexation 
+    avec des cations divalents (Ca2+ ou Mg2+), précipitation sur 
+    les membranes ;</li>
+    <li>choc thermique créant des trous par lesquels l'ADN pénètre 
+    (cf. TP)</li>
+</ul>	
+<u>Remarque :</u> L'<b><u>efficacité de transfection</u></b> est 
+très faible 
+(de 105 à 108 bactéries transformées [UFC] par microgramme d'A.D.N., 
+soit moins d’une molécule efficace sur plus d’un million). Le calcul 
+de ce rendement se fait en déterminant combien d’UFC on obtiendrait 
+en étalant la totalité des cellules ayant subi le choc thermique et 
+en divisant ce nombre par la quantité d’ADN utilisée exprimée en µg.
+<br/>
+
+<u>Par exemple</u> : à 200 µL de cellules compétentes est ajouté 2 
+µl d’ADN à 0,5 ng/µL. Après 45 minutes de sédimentation et le choc 
+thermique sont ajoutés 1,8 mL de milieu riche. Après étalement de 
+50 µL de cette suspension on dénombre au bout de 18 heures 569 UFC 
+(il n’y a pas de norme N < 300).<br/>
+<u>Raisonnement</u> : 1 ng d’ADN à permis d’obtenir une suspension 
+de 2 mL, 50 µL donne 569 UFC, 2 mL aurait donné 40 fois plus, soit 
+22360 UFC. L’efficacité est donc de E = 22360 / 1.10-3  2,2.107 
+UFC/µg</p>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<h4>Transfection des cellules eucaryotes sans paroi par le <mark>phosphate 
+de calcium</mark></h4>
+	<details><summary>transfection cellules sans paroi</summary>
+<p>Les cellules animales adhérentes et les protoplastes peuvent être 
+transformé par la précipitation sur les tapis cellulaires d’<b><u>
+	agrégats</u></b> de <b><u>phosphate de calcium</u></b> complexé 
+	avec l’ADN transgénique.
+L’ADN est ajouté à une solution de phosphate de calcium, puis 
+homogénéisé en créant un courant ascensionnel dans le tube provoqué 
+par l’envoi de bulles stériles dans le tube. Lorsque l’on peut 
+observer la formation de petits agrégats (cristaux) dans le tube, 
+la suspension de cristaux est disséminée sur le tapis de cellule en 
+culture (une goutte par ci, une par là).
+Le phénomène de transport intracellulaire du complexe ADN/phosphate/
+Calcium n’est pas compris, mais se fait sans choc thermique 
+endocytose ?).</p>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<h4>Association à des <mark>liposomes cationiques</mark> artificiels, à 
+la transferrine, à des polycations : internalisation (<sub>uniquement 
+pour les cellules à membrane nue</sub>)</h4>
+	<details><summary>liposomes</summary>
+	<article>
+		<p>Des polymères cationiques peuvent servir à neutraliser 
+l'ADN et à le complexer en gros agrégats. Cela peut lui permettre 
+de traverser aisément la membrane plasmique des cellules sans paroi. 
+La technique la plus répandue est celle qui utilise les liposomes 
+cationiques formés d’une substance de type lipidique dont la partie 
+hydrophile est <b><u> cationique</u></b> (ammonium quaternaire).
+<br/>
+Ces molécules forment des liposomes (vésicules à double couche) qui 
+neutralisent et cotransportent le vecteur à travers la membrane 
+plasmique. Le phénomène de libération de l’ADN est mal connu.</p>
+<img src="./img/coursBMGG2_html_d0f07e6d0f62dbd6.png"  
+style="float:left;width:30%;"
+alt="internalisation de l'ADN complexé à un liposome cationique"/>
+	</article>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+<h3>Méthodes physiques</h3>
+<h4>Électroporation <sub>(en remplacement du choc thermique et polyvalent
+</sub>)</h4>
+	<details>
+	<summary>Électroporation</summary>
+	<article>
+<h5>Définition de l'électroporation</h5>
+<img src="./img/coursBMGG2_html_34cd550b9a9a2a14.png"  
+style="float:left;width:60%;"
+alt="électroporateur"/>
+		<dfn>Définition : Cette méthode utilise une machine 
+(<mark>électroporateur</mark>) capable de créer un <mark>instant très 
+bref</mark> un champs électrique de <mark>tension élevée</mark> 
+(réglable) qui provoque la formation fugace de trous dans les membranes 
+phospholipidiques (anions).<br/>L'ADN en solution peut alors rentrer 
+dans le cytoplasme.</dfn>
+<h5>Mise en oeuvre technologique</h5>
+L'ADN à transfecter est mis en solution dans de l’eau très pure ou 
+fortement désionisée (sinon un arc électrique peut se déclencher). Pour
+maintenir la solution isotonique, les sels doivent être remplacés
+dans le tampon de suspension cellulaire par des solutés non chargés 
+comme le glucose par exemple ; pour cela les cellules peuvent être 
+centrifugées plusieurs fois en ajoutant du tampon de suspension 
+afin de les laver (diluer les sels).<br/>
+Le courant électrique ne peut passer que par les membranes cellulaires 
+chargées, ce qui crée les ouvertures.<br/>
+L'<mark>efficacité de transfection est améliorée</mark> par rapport 
+aux méthodes utilisant le choc thermique.
+
+	</article>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<h4>Projection de l'ADN associé à des particules solides : Biolistique
+</h4>
+	<details><summary><mark>Biolistique</mark></summary>
+<img src="./img/coursBMGG2_html_dbdd8a5a747fb0e2.png"  
+style="float:left;width:30%;"
+alt="DNA gun : biolistique"/>
+		<p>
+Les cellules des plantes sont entourées d'une paroi très difficile à 
+éliminer. Pour transformer des cellules végétales sans supprimer la 
+paroi on utilise des canons projetant des <u><b>particules métalliques
+</b></u> d'or ou  de tungstène sur lesquelles sont <u><b>adsorbés</b>
+</u> les vecteurs de clonage : cette méthode est appelée <u><b><mark>
+	Biolistique</mark></b></u>.
+<br/>
+Cette technique peut également être employée pour transfecter des 
+cellules animales in situ, c’est à dire dans des tissus épais.		
+		</p>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<h2>Méthode biologiques</h2>
+<h3>Transformation des cellules bactéries GRAM+ et certaines Gram-</h3>
+	<details><summary>Transformation des bactéries Gram+</summary>
+	<p>
+La transformation de <em>Bacillus subtilis</em> Gram + (domaine 
+industriel) 
+se fait naturellement grâce à l'existence d'un système de transport 
+membranaire d'ADN étranger (le 
+<a href="javascript:voir('transformasome');">transformasome</a>) situé 
+au niveau de la membrane plasmique. Il suffit donc de mettre en contact 
+une culture de ces bactéries avec le vecteur recombiné pour obtenir des 
+bactéries transformées. Ces bactéries sont très faciles à transformer et 
+sont 
+souvent capables d’excréter les protéines transgéniques pourvu que 
+leur gène soit fusionné (en phase) avec une séquence codant pour 
+une sorte de <b><u>peptide signal</u></b>.	
+	</p>
+	</details>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<h3>Utilisation des virus adaptés au clonage</h3>
+	<details><summary>vecteurs viraux</summary>
+		<p>Les virus possèdent des outils moléculaires très efficaces 
+		pour injecter leur génome dans les cellules parasitées, 
+		ces systèmes peuvent être mis à profit pour s'assurer 
+		d'un <b><u>excellent taux de transfection</u></b>. 
+		Le seul paramètre à régler est la multiplicité 
+		d'infection.<br/>
+Les rétro-virus (ou lentivirus) sont utilisés pour stabiliser le 
+transgène car ils s’intègrent au génome mais à un endroit non défini 
+à l’avance (c’est très risqué!).
+		</p>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+<h3>Injection dans les grosses cellules</h3>
+	<details><summary>injection</summary>
+		<h4>Injection dans les cellules végétales</h4>
+<img src="./img/coursBMGG2_html_d6dd983bc5c2e195.png"  
+style="float:left;width:30%;" 
+title="Injection dans les cellules végétales"
+alt="Injection dans les cellules végétales"/>
+<p>L’injection d’ADN dans les grandes cellules eucaryotes réussi 
+d’autant mieux que l’ADN est linéaire et en concentration assez élevé. 
+En effet, les molécules circulaires sont éliminées par le système de 
+défense antiviral, et l’ADN doit être intégré au génome par recombinaison 
+(hétérologue) pour se stabiliser, ce phénomène étant très rare, il faut 
+injecter de nombreuses molécules pour espérer qu’au moins une soit 
+intégrée. <a href="http://www.chimie-sup.fr/OGM.htm" target="_blank"
+ 
+			 title="">Référence</a></p>
+		<h4>Injection dans les ovocytes</h4>
+<img src="./img/coursBMGG2_html_3689de8d9d7c1db5.jpg"  
+style="float:left;width:30%;" 
+title = "Injection dans les ovocytes"
+alt="Injection dans les ovocytes II fécondés"/>
+<p>L'A.D.N. (sous forme de nombreuses molécules de vecteurs recombinés) 
+peut être directement injecté par micromanipulation dans le <b><u>
+	pronucleus</u></b> mâle (c’est le plus gros des deux pronucléi) 
+	d'un œuf fécondé. <br/>
+La <b><u>recombinaison hétérologue</u></b> (au hasard dans un ou 
+plusieurs chromosomes) n’est pas contrôlée. Le taux de réussite est 
+faible et aléatoire (quelques pourcent d’embryons transgéniques).<br/>
+
+Dans l’image ci-contre on distingue bien les deux pronucléi.<br/>
+
+Technique : des ovules sont prélevés sur un animal stimulé 
+hormonalement. La fécondation est réalisée in vitro pour contrôler 
+la maturation des œufs. Les œufs sont maintenus par une <b><u>
+	pipette de contention</u></b> (à gauche sur l’image) par effet 
+	de ventouse sur la <b><u>membrane pellucide</u></b>. 
+	L’injection se fait en perçant la membrane pellucide à l’aide 
+	d’une <b><u>aiguille de verre creuse</u></b> obtenue par étirement 
+	à chaud (par une machine). <br/>
+
+N.B :  si l'œuf est énucléé, l'injection d'un noyau de cellule 
+somatique permet de réaliser un clonage.</p>
+	</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+</details>
+<!-- --------------------------------------------------------------- -->
+<!-- --------------   ressources cachées              -------------- -->
+<article id="transfection" class="ressourceCachee" 
+         onkeydown="if (event.keyCode == 27) voir('transfection');">
+	<button class="btnQuitter" onclick="voir('transfection');" >X
+	</button>
+	<p>
+	Par convention, les termes transformation et transfection sont 
+	réservés à certaines cellules :</p>
+	<ul>
+		<li>les micro-organismes procaryotes (bactéries) et les 
+		eucaryotes unicellulaires comme les levures sont
+		<mark><b><u>transformés ;</u></b></mark><br/><br/></li>
+		<li>les cellules eucaryotes issues d'êtres pluri-cellulaires 
+		comme les cellules animales, fongiques (champignons) et 
+		végétales sont <mark><b><u>transfectées</u></b></mark>
+		</li>
+	</ul>
+</article>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<article id="transformasome" class="ressourceCachee" 
+         onkeydown="if (event.keyCode == 27) voir('transformasome');">
+	<button class="btnQuitter" onclick="voir('transformasome');" >X
+	</button>
+	<img 
+	src="./img/transformasomeBGplus.png"
+	style="float:left;width:50%;"
+    alt="transformasome chez Vivrio cholerae"/>
+	<p>L'image ci-contre schématise le système d'intégration d'ADN
+	externe dans le génome d'une bactérie capsulée. Comme on le voit
+	c'est une bactérie Gram+ (un  pneumocoque). 
+	<br>Différentes étapes sont visibles :</p>
+	<ul>
+		<li>adsorption de l'ADN ds externe sur le pilus ;</li>
+		<li>le Pilus se fixe à un récepteur de la membrane plasmique(ComGB)</li>
+		<li>un des deux brins est digéré par une exonucléase  (EndA)</li>
+		<li>un des deux brins restant est transloqué à travers la membrane 
+		en passant par un canal protéique dédié : ComEC et ComFA</li>
+		<li>l'ADN simple brin est stabilisé par des <abbr 
+		title="Single Stand Binding Protein">SSB</abbr></li>
+		<li>enfin la protéine RecA recombine le brin étranger dans 
+		le chromosome bactérien.</li>
+	
+	
+	</ul>
+	
+</article>	
+	
+	
+	
+</body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title> Page de vidéos en BMGG </title>
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/style.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" 
+	      href="../../CSS/styleQuiz.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/simpleMenuHorizontal.css">
+
+<!-- ------------------------------------------------------------------>
+	<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page -->
+	<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
+	<link rel="icon" href="icone.ico" type="image/x-icon"/>    
+	
+	<script language="JavaScript" src="moteurQuiz.js"></script>
+	<script language="JavaScript" src="../../JS/affichages.js"></script>
+	
+	<script language="JavaScript" src="quizE3C_NSI.js"></script>
+	<script language="JavaScript" src="funcQuiz.js"></script> 
+	
+	<script language="JavaScript">
+		var titrePage = "Page de vidéos en BMGG";
+		var aurevoir = "À bientôt, revenez vite !";   
+			//À = Alt + 0192
+			//var id = setInterval(ma_fontion, 1000);
+			
+		function titre(texte) 
+		{
+			document.title = texte;
+		}
+		
+		var bit = [0,0,0,0,0,0,0,0];
+		var  hexaNum = [0,0,0,0,0,0,0,0,0];
+
+		function init () { // met en place les NQ questions/réponses/corrigés
+			NQ = Q.length; // nombre de questions
+			
+			zoneQ = document.getElementById("zoneQuestions");
+			for (var i=1; i<NQ+1; i++) {
+				zoneQ.innerHTML += " <div id='dvQ"+i+"'></div><hr/>";
+				afficherQ (i);
+			}
+			for (var i=1; i<8; i++) {
+				bit[i] = 0;
+			}
+		}	
+	</script>
+	<style>
+		.tabBin{
+			width : 500px;
+			color : pink;
+		}
+		.tabBin td {
+			width : 50px;
+		}
+		.tabBin td[colspan=7] {
+			width : 350px;
+		}
+		.tabBin td:hover {
+			width : 10%;
+		}
+		input[type = number] {
+			width : 50px;
+		}
+	</style>
+</head>
+<!-- ------------------------------------------------------------------>
+<!-- ------------------------------------------------------------------>
+
+<body onload="init();" onblur="titre(aurevoir);" 
+      onfocus="titre(titrePage);">
+<!-- ------------------------------------------------------------------>
+<nav>
+	<ul class="menu">
+		<li><a href="../../index.html">retour à la page d'accueil</a>
+		</li>
+		<li><a href="../../niveau_3BTS.html">retour à la page BTS</a></li>
+		</li> 
+	</ul>
+</nav>
+<!-- ------------------------------------------------------------------>
+<!-- ------------------------------------------------------------------>
+<p class="titre">Sommaire de la page vidéos</h1>
+<h1>&Eacute;tude de l'ADN</h1>
+<!-- ------------------------------------------------------------------>
+<h2>Le séquençage</h2>
+<details><summary>technique de Sanger</summary>
+<table><caption>Quelques vidéos intéressantes sur :</caption>
+<tr>
+	<th>Séquençage selon la technique de Sanger</th>
+	<th></th>
+</tr>
+<tr>
+	<td>
+		<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/ONGdehkB8jU" frameborder="5" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; \
+picture-in-picture" allowfullscreen
+title="production d'une collection de fragments d'ADN interrompus par \
+des terminateurs fluorescents par réplication un vitro">
+</iframe>
+	</td>
+	<td>
+	
+	</td>
+</tr>
+</table>
+
+</details>
+
+<!-- ------------------------------------------------------------------>
+
+<h2>La chromatine</h2>
+<details><summary>ADN condensé et décondensé</summary>
+
+<table><caption>Quelques vidéos intéressantes sur :</caption>
+<tr>
+	<th colspan="2">Une protéine qui compacte l'ADN : la condensine</th>
+</tr>
+<tr>
+	<td>
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/bK9c2kl9_so" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; \
+gyroscope; picture-in-picture" allowfullscreen
+title=""></iframe>	
+	</td>
+	<td>
+<iframe width="700" height="395" 
+src="https://www.youtube.com/embed/HTeq5aZMCxQ" frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; \
+picture-in-picture" allowfullscreen></iframe>
+	</td>
+</tr>
+</table>
+</details>
+
+<!-- ------------------------------------------------------------------>
+<h1>&Eacute;tude de la transcription de l'ADN et ARN</h1>
+<p>Il existe deux sortes de gènes :</p>
+<ul>
+	<li>ceux qui codent des protéines ;</li>
+	<li>ceux qui codent des ARN structuraux (ARNr, i, sn, t, &hellip;)
+	</li>
+</ul>
+<h2>Les facteurs de transcription</h2>
+<details><summary>facteurs trans</summary>
+
+<table><caption>Quelques vidéos intéressantes sur :</caption>
+<tr>
+	<th colspan="2">séquences cis et facteurs trans</th>
+</tr>
+<tr>
+	<td>
+	<iframe width="560" height="315" 
+	src="https://www.youtube.com/embed/MkUgkDLp2iE" 
+	frameborder="0" allow="accelerometer; autoplay; encrypted-media; \
+	gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</td>
+	<td>
+
+	</td>
+</tr>
+</table>
+</details>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

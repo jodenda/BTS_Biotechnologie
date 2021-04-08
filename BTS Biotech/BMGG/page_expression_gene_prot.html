@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8"> 
+	<title>Cours sur l'expression des gènes</title>
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" href="../../CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" href="../../CSS/styleQuiz.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/simpleMenuHorizontal.css">
+
+<!-- ------------------------------------------------------------------>
+	<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page -->
+	<link rel="shortcut icon" href="http://jodenda.free.fr/BTS%20Biotech/BMGG/icone.ico" type="image/x-icon">
+	<link rel="icon" href="http://jodenda.free.fr/BTS%20Biotech/BMGG/icone.ico" type="image/x-icon">    
+	
+	<script language="JavaScript" src="../../JS/moteurQuiz.js"></script>
+	<script language="JavaScript" src="quizExpressionGenes.js"></script>
+	<script language="JavaScript" src="../../JS/affichages.js"></script> 
+	<script language="JavaScript">
+		var titrePage = "Cours sur l'expression des gènes";
+			var aurevoir = "À bientôt, revenez vite !";   //À = Alt + 0192
+			//var id = setInterval(ma_fontion, 1000);
+			
+		function titre(texte) 
+		{
+			document.title = texte;
+		}
+		function init () { // met en place les NQ questions/réponses/corrigés
+/*			NQ = Q.length; // nombre de questions
+			
+			let tabThemes = [7, "A", "B", "C", "D", "E", "F", "G"];
+			zoneQ = document.getElementById("zoneQuestions");
+			for (var i=1; i<NQ+1; i++) {
+				zoneQ.innerHTML += " <div id='dvQ"+i+"'></div><hr/>";
+				afficherQ ([i,1],[],tabThemes);
+			} */
+		}	
+	</script>
+	<style>
+		abbr {
+			font-weight : bold;
+			
+		}
+		/*
+		body {
+		  counter-reset: compteurFig;
+		}
+		
+		figcaption::before {
+		  counter-increment: compteurFig;
+		  content: "⮜ figure n° " counter(compteurFig) ": ";
+		}*/
+	</style>
+</head>
+
+<body onload="init();" onblur="titre(aurevoir);" onfocus="titre(titrePage);">
+<header>
+<p id="titrePrincipal">Régulation de l'expression des gènes codant des 
+protéines</p>
+<nav>
+	<ul class="menu">
+		<li><a href="http://jodenda.free.fr/index.html">retour à la page d'accueil</a></li>
+		<li><a href="javascript:voir('agenda');">voir l'agenda</a></li>
+		<li><a href="http://jodenda.free.fr/BTS%20Biotech/BMGG/pageVideoBMGG.html">page vidéos</a>
+		</li>
+		<li><a href="http://jodenda.free.fr/BTS%20Biotech/BMGG/quiz_expression_gene_prot.html" title="Quiz pour s'entraîner">Quiz pour s'entraîner</a>
+		</li>
+	</ul>
+</nav>
+</header>
+<section>
+
+<p>Pour bien répondre aux questions, vous pouvez utiliser votre cours et 
+les cours suivant, en cliquant sur le lien vous déclencherez le 
+téléchargement d'un pdf :</p>
+<ul>
+	<li>Cours du  <a href="http://spiralconnect.univ-lyon1.fr/spiral-/files/download?mode=inline&amp;data=7222489">Professeur J. SAMARUT</a>
+	</li>
+	<li>Cours du <a href="http://unf3s.cerimes.fr/media/paces/Grenoble_/1112/lunardi_joel/lunardi_joel_p07/lunardi_joel_p07.pdf">Professeur 
+	Joël LUNARDI</a></li>	 
+</ul>
+<hr>
+<h1>Proposition de plan de cours</h1>
+<p>
+<small><a href="https://fr.wikipedia.org/wiki/Expression_g%C3%A9n%C3%A9tique" target="_blank" title="article de Wikipedia sur l'expression génétique">
+référence Wikipédia</a></small>
+</p>
+<h2>Introduction et définitions</h2>
+<details open=""><summary>différents niveaux de régulation</summary>
+	<h3>définitions importantes :</h3>
+	<dfn>Certaines <b><u><mark>séquences</mark></u></b> sur l'<b><u>
+		<mark>ADN</mark></u></b> sont responsables
+	d'activation ou d'inhibition de la transcription des gènes par 
+	l'ARN polymérase ; <br>elles sont appelées éléments <b><u><mark>cis-
+	régulateurs</mark></u></b> ;
+   <b><u>cis</u></b> signifie du même coté ou sur la même molécule.<br>
+	 Ici cela signifie que ce sont des portions d'ADN (séquences) qui 
+	 participent à la régulation de la transcription.
+	</dfn><br>
+	<dfn>Les partenaires obligatoires des séquences cis-régulatrices
+	sont des protéines appelées <mark>facteurs de transcription</mark> 
+	ou éléments <mark>trans</mark> (trans = à coté ou en face) ;
+	ces protéines activent ou inhibent la transcription des gènes, 
+	respectivement en stabilisant ou déstabilisant la fixation de l'ARN
+	polymérase.</dfn>
+	<dfn>Un <mark>facteur de transcription</mark> est une <mark>
+	protéine</mark> qui est impliquée dans :<br>
+	<ul><li>l'initiation de la transcription en permettant la 
+	reconnaissance par l'ARN polymérase des séquences du promoteur 
+	(séquence <em>Tata box</em> par	exemple) ;</li>
+	<li>la régulation de la transcription, par exemple les facteurs 
+	trans-activateurs (qui se fixent sur les séquences 
+	<mark>enhancer</mark>
+	) et les facteurs trans-inhibiteurs (qui se fixent sur les <mark>
+	silencers</mark>) ; N.B. chez les procaryotes on parlera plutôt de
+	répresseurs et d'activateurs.</li>
+	<li>la terminaison de la transcription.</li>
+	</ul></dfn>
+
+	<details><summary>séquence cis et facteurs trans ... en vidéo
+	</summary>
+	<iframe src="Cours%20sur%20l'expression%20des%20g%C3%A8nes_fichiers/STPF48O9Qus.html" allow="accelerometer; autoplay; encrypted-media; \
+	gyroscope; picture-in-picture" allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
+	</details>
+
+	<h3>les différents niveaux :</h3>
+	<p>L'activation ou l'inhibition de la transciption d'un gène est le
+	résultat de l'interaction de différents facteurs à tous les niveaux
+	de complexité de l'organisme : de la molécule d'ADN, probablement
+	jusqu'au psychisme …<br>
+	Les différents facteurs (pas tous connus) seraient :
+	</p>
+	<ul>
+		<li>présence de séquences régulatrices à proximité ou à portée
+		du promoteur (action à distance) ;</li>
+		<li>modification chimique de l'ADN et des histones ; effet sur
+		la compaction de la chromatine (<mark>épigénétique</mark>);</li>
+		<li>maturation différentielles des ARNm eucaryotes ; épissage
+		alternatif ; polyadénylation différentielle ;</li>
+		<li>stabilité des ARNm dans le cytoplasme ;</li>
+		<li>interférence à ARN ;</li>
+		<li>stabilisation ou destabilisation des protéines ;</li>
+	</ul>
+</details>
+<!-- ------------------------------------------------------------------>
+<h2>La régulation des gènes procaryotes</h2>
+<details open=""><summary>opérons et gènes solitaires chez les eubactéries
+</summary>
+	<h3>Les gènes simples à expression constitutive</h3>
+	<!-- -------------------------------------------------------------->
+	<details open=""><summary>gènes constitutifs</summary>
+	<dfn><mark>Un gène minimal procaryote</mark> possède au minimum un
+	promoteur pour initier sa transcription, un <abbr title="Ribosome \
+	Binding Site ou séquence de Shine et Dalgarno, pour les gènes de \
+	protéines bactériennes"><a title="Ribosome Binding Site ou séquence\
+ de Shine et Dalgarno, pour les gènes de protéines bactériennes" href="https://fr.wikipedia.org/wiki/S%C3%A9quence_de_Shine_Dalgarno">RBS
+			  </a></abbr> et une séquence codante (<abbr title="open reading frame = cadre \
+ouvert de lecture = CDS = séquence codant une protéine : commence par \
+ATG et fini par un codon stop"><a href="" target="_blank" title="open \
+reading frame = cadre ouvert de lecture = CDS = séquence codant une \
+protéine : commence par ATG et fini par un codon stop">ORF</a></abbr> = 
+			  <abbr title="Coding DNA Sequence">CDS</abbr> : si 
+    c'est un gène de protéine) et une séquence de terminaison.</dfn>
+	<dfn>Un gène à <mark>expression constitutive</mark> est <mark>
+transcrit en permanence</mark> (mais pas forcément à un taux élevé) ; sa 
+	transcription est en principe non régulée ; la transcription étant 
+	coûteuse en énergie, seuls les gènes codant des ARN de structure (
+	ARNt, ARNr chez tous les êtres vivants et les organites, snARN et 
+	ARNi chez les eucaryotes ...) et des protéines indispensables au 
+	métabolisme de base sont issues de la transcription de gènes 
+	constitutifs. En génie génétique, les gènes de resistance à un 
+	antibiotique sont constitutifs. </dfn>
+	<p><b><u>Remarques :</u></b></p>
+	<ul>
+		<li>dans l'opéron lactose on inclut parfois le gène lacI qui
+		code le répresseur de l'opéron lactose ; en fait, il ne fait
+		pas partie de l'opéron lui même : lacI est un gène simple (ne
+		contenant qu'une seule <abbr title="open reading frame = cadre \
+ouvert de lecture = CDS = séquence codant une protéine : commence par \
+ATG et fini par un codon stop"><a href="" target="_blank" title="open \
+reading frame = cadre ouvert de lecture = CDS = séquence codant une \
+protéine : commence par ATG et fini par un codon stop">ORF</a></abbr>
+		, et il n'est donc pas régulé comme l'opéron lactose ;</li>
+		<li>
+		<p>les <mark>gènes Amp<sup>R</sup></mark> (qui code une béta-
+lactamase
+		qui hydrolyse l'ampicilline et rend donc la bactérie insensible
+		à cet antibiotique), Kan<sup>R</sup></p> (contre la Kanamycine 
+		et d'autres aminosides), Tet<sup>R</sup> (contre la 
+		tétracycline), etc. ; sont <mark>constitutifs</mark> et utilisés 
+		en génie 
+		génétique comme	marqueurs de transformation et portés par la 
+		plupart des vecteurs plasmidiques utilisés.
+		</li>
+	</ul>
+	</details>
+	<h3>Les opérons</h3>
+	<h4>le modèle lactose</h4>
+	<!-- -------------------------------------------------------------->
+	<details><summary>opéron lactose</summary>
+	<p>Historiquement c'est l'étude de ce groupe de gènes par Jacob et 
+	Monod (prix Nobel) qui a permis pour la première fois de comprendre
+	comment les gènes bactériens sont régulés.	</p>
+	<a href="" target="_blank" title="site wikipédia sur l'opéron lactose">opéron lactose sur 
+	Wikipédia</a>
+	<img src="Cours%20sur%20l'expression%20des%20g%C3%A8nes_fichiers/1024px-Lac_operon-2010-21-01.png" style="float:left">
+	</details>	
+	<h4>les autres opérons</h4>
+	<!-- -------------------------------------------------------------->
+	<details open=""><summary>anabolisme, catabolisme et métabolisme secondaire
+	</summary>
+	<dfn>L'<mark>anabolisme</mark> correspond à l'ensemble des réactions
+	biochimiques impliquées dans la <mark>synthèse</mark> ou fabrication
+	des molécules biologiques.</dfn>
+	<dfn>Le <mark>catabolisme</mark> correpond à l'ensemble des réactions
+	biochimiques impliquées dans la <mark>simplification</mark> ou 
+	destruction	des molécules biologiques (par exemple la digestion).
+	</dfn>
+	<dfn>Les <mark>métabolites secondaires</mark> sont produits de
+	manière non essentielle par les êtres vivants lorsque les réactions
+	du métabolisme de base fonctionnent correctement et que les cellules
+	arrêtent de se diviser : ces substances sont souvent des poisons 
+	destinés à protéger les cellules des prédateurs ; chez les plantes 
+	ce sont principalement des tanins et des alcaloïdes ; chez les 
+	micro-organismes se sont par exemple les antibiotiques qui servent
+	à contrôler les espèces concurantes. </dfn>
+	</details>
+	<h5>opérons impliqués dans le catabolisme</h5>
+			<details><summary>opérons du catabolisme</summary>
+			<h5>Le cas des opérons lactose, saccharose, xylose, ...</h5>
+	<p>Tant que le glucose est présent en abondance dans le milieu, il
+	est inutile pour la cellule et très coûteux en énergie de produire
+	des enzymes inutiles dans ce contexte (béta-galactosidase par 
+	exemple). Quand le glucose est abondant le taux d'<abbr 
+	title="Adénosine Mono Phosphate cyclique">AMPc</abbr> dans le cytoplasme
+	bactérien est très bas. Quand le glucose devient rare l'adénylate
+	cyclase est activée et elle transorme de plus en plus d'ATP en 
+	AMPc. Ce métabolite est appelé <mark>second messager</mark> ; c'est
+	une substance qui est produite dans la cellule en cas de stress 
+	métabolique (manque d'énergie). L'AMPc peut se fixer sur différentes
+	protéines effectrices (qui font des choses) comme la protéine <abbr 
+	title="Catabolic gene Activator Protein">CAP</abbr>. La protéine CAP
+	activée par la fixation de l'AMPc se fixe alors en amont de 
+	différents promoteurs liés au catabolisme comme les opérons 
+	permettant l'utilisation d'oses (sucres) plus rares et complexes que
+	le glucose. Par exemple, en amont de l'opéron lactose existe un site
+	de fixation du complexe CAP+AMPc qui augmente d'un facteur 50 la 
+	transcription de l'opéron lactose, mais celui-ci n'est vraiment 
+	totalement actif qu'en présence d'un inducteur (allo-lactose ou bien
+	en génie génétique l'<abbr title="Iso-Propyl Thio béta-Galactoside">
+	IPTG</abbr> qui en se fixant sur le complexe du répresseur 
+	(tétramère dela protéine codée par le gène lacI) le déforme et 
+	l'empèche de se fixer sur l'opérateur de l'opéron lactose. En 
+	d'autres termes l'inducteur (IPTG) inhibe l'inhibiteur (répresseur) ;
+	moins moins égal plus ; la transcription a lieu quand l'inducteur
+	empèche le répresseur de bloquer l'opérateur.
+	
+	</p>
+	<img style="/*float:left;*/" src="Cours%20sur%20l'expression%20des%20g%C3%A8nes_fichiers/operon_bilan2.jpg">
+			</details>
+	<h5>opérons impliqués dans l'anabolisme</h5>
+			<details><summary>opérons de l'anabolisme</summary>
+			<h5>Le cas de l'opéron tryptophane</h5>
+			<p>Site complet sur le sujet : 
+			<a href="https://www.onlinebiologynotes.com/tryptophan-operon/" 
+			   target="_blank" title="tout sur l'opéron tryptophane">
+			   cliquer ici</a></p>
+			<p>Produire en trop grande quantité un acide aminé rare et 
+	complexe comme le tryptophane est trop coûteux en énergie, 
+	l'anabolisme du tryptophane nécessite la synthèse de cinq protéines
+	différentes (5 enzymes). Á l'opposé du fonctionnement de 
+	l'opéron lactose (qui est lié au catabolisme), c'est quand il y a 
+	trop de tryptophane que l'opéron est réprimé.<img style="" src="Cours%20sur%20l'expression%20des%20g%C3%A8nes_fichiers/trp-operon.jpg"></p>
+	<p>Sources Wikipedia :</p>
+	<dl>
+		<dt><a href="https://fr.wikipedia.org/wiki/Amplificateur_(biologie)" title="silencer">en français</a></dt>
+		<dt><a href="https://en.wikipedia.org/wiki/Silencer_(genetics)" title="silencer">en anglais (mieux !)</a></dt>
+	</dl>
+			</details>
+	</details>
+	
+<!-- ------------------------------------------------------------------>
+<h2>La régulation des gènes eucaryotes</h2>
+<details open=""><summary>gènes eucaryotes</summary>
+	<p>
+	</p><h3><em>Enhancer</em> et <em>silencer</em></h3>
+	<p>L'expression des gènes eucaryotes est régulées de manière 
+	complexe à différentes échelles. Les séquences régulatrices se 
+	trouvent pour la plupart à proximité du promoteur et sont les points
+	d'ancrage des facteurs de transcription qui activent (en se fixant 
+	sur les <mark><em>enhancer</em></mark>) ou inhibent (en se 
+	fixant sur les <mark><em>silencer</em></mark>)la transcription 
+	(donc la fixation de l'ARN polymérase sur le promoteur).
+	</p>
+	<h4>Structures des facteurs trans : facteurs de transcription</h4>
+	<p>Toutes les molécules appelées <mark>facteurs de transcription
+	</mark> sont des protéines. Elles possèdent toutes au moins deux
+	domaines fonctionnels : c'est à dire que dans leur structure 3D, il 
+	est possible de distinguer deux parties ayant des rôles différents :
+	</p>
+	<ul>
+		<li>le <mark><em>binding domain = BD</em></mark> ou domaine de 
+		liaison à 
+		l'ADN contient des acides aminés dont les chaînes latérales
+		établissent de nombreuses liaisons hydrogène (<b>LH</b>) avec 
+		les bases
+		de la séquence d'ADN reconnue. <br/> Plus la séquence reconnue
+		est proche d'une séquence idéale appelée <mark>séquence 
+		consensus</mark> plus le nombre de LH est grand et plus la 
+		protéine (facteur trans) est solidement fixée sur la séquence
+		cis (ou <mark><em>responsive element = RE</em></mark>). <br/>
+		Par exemple, le dimère Jun/Fos est constitué de deux protéines
+		différentes qui s'associent pour former un facteur de 
+		transcription impliqué dans la régulation de la division 
+		cellulaire. Les gènes qui les codent sont appelés des 
+		oncogènes car lorsque jun et fos sont surexprimés à la suite
+		d'une mutation (cancérigène), les cellules se divisent sans 
+		régulation.</li>
+		
+		<li>le domaine trans-activateur (souvent riche en charge 
+		négatives qui stabilisent l'ARN polymérase plutôt basique ; 
+		c'est à dire positive) ou trans-inhibiteur (qui destabilisent
+		l'ARN polymérase)</li>
+	</ul>
+	 
+	 <details><summary>Image : séquences consensus de différents facteur 
+	 de transcription</summary>
+	 <figure>
+  <img src ="https://www.researchgate.net/profile/Joseph_Miano/publication/49661641/figure/download/fig5/AS:305972217171994@1449960869926/SRF-associates-with-different-transcription-factor-TF-motifs-depending-on-genomic.png" 
+alt="différentes séquence consensus" style="/*float:left;*/" />
+  <figcaption>séquences consensus de différents facteur de transcription
+  </figcaption>  </details>
+  
+  <details><summary>exemple de facteur de transcription homodimérique
+  </summary>
+	</figure> 
+		 <figure>
+  <img src ="http://image.slidesharecdn.com/eukaryoticgeneregulationii2013lecslides-130918101905-phpapp02/95/eukaryotic-gene-regulation-part-ii-2013-13-638.jpg" 
+alt="exemple de facteur de transcription" style="/*float:left;*/" />
+  <figcaption>exemple de facteur de transcription homodimérique, 
+  transactivateur et sensible à une hormone oestrogène (effecteur ou
+  substance activatrice)
+  </figcaption> </details>
+	</figure> 
+	
+	<details><summary>exemple de la complexité de la région régulatrice
+	</summary>
+	<figure>
+  <img src ="https://www.researchgate.net/profile/Gaelle_Laurent/publication/279307657/figure/fig2/AS:272573980213284@1441998109807/Analysis-of-SIRT3-promoter-A-List-of-transcription-factor-binding-sites-identified-by.png" 
+  style="/*float:left;*/"
+  alt="exemple de la complexité de la région régulatrice d'un promoteur\
+eucaryote" />
+  <figcaption>exemple de la complexité de la région régulatrice d'un promoteur eucaryote
+  </figcaption> </details>
+	</figure>
+	
+</details>
+<hr>
+<!-- ------------------------------------------------------------------>
+<h1>Technologies d'étude de l'expression des gènes</h1>
+<details><summary>northern blot, puces à ADN, western blot, RT-PCR
+</summary>
+	<p>
+	Ce chapitre va traiter des méthodes permettant d'étudier 
+	qualitativement et éventuellement quantitativement l'expression des 
+	gènes. Ces techniques permettent de mesurer les effets de 
+	changements dans l'environnement des cellules sur leur <mark>
+	phénotype</mark>
+	</p>
+	<!-- -------------------------------------------------------------->
+	<h2>Mesure de la quantité d'ARNm produits</h2>
+	<details><summary>dos-blot, northern blot, puces à ADN, RT-PCR</summary>
+	<h3>RT-PCR</h3>
+	<p><b>N.B. : </b>sera vu en deuxième année. En résumé :</p>
+	<ul><li>les ARN totaux 	doivent être purifiés, l'ADN génomique 
+	détruit par hydrolyse enzymatique (DNase) pour ne pas interférer
+	avec les mesures.</li>
+	<li>les ARNm sont transcrits en sens inverse en <abbr 
+	title="ADN complémentaire">ADNc</abbr> à l'aide d'une amorce d'ADN 
+	et d'une transcriptase inverse (ADN polymérase ARN dépendante) 
+	appelée en anglais <abbr title="reverse transcriptase">RT</abbr>;
+	</li>
+	<li>l'<abbr title="ADN complémentaire">ADNc</abbr> est amplifié lors 
+	d'une PCR quantitative en temps réel
+	qui permet de mesurer la quantité d'ADNc, donc d'en déduire la
+	quantité d'ARNm produit dans l'échantillon analysé. Un étalonnage
+	est donc nécessaire.</li>
+	</ul> 
+	<h3>Techniques basées sur l'hybridation moléculaire : utilisation 
+	de sonde</h3>
+	<dfn>Une sonde moléculaire est une molécule capable de détecter
+	visuellement le partenaire avec lequel elle va se lier spécifiquement.
+	Dans le cas des acides nucléiques, la <mark>sonde moléculaire</mark> 
+	sera un acide nucléique (ADN le plus souvent, ou ARN, ou PNA) dont
+	la séquence est complémentaire inversée de la séquence à mettre en 
+	évidence et marquée de manière froide ou chaude.</dfn>
+	
+	<h4>Marquage des sondes moléculaires en BMGG</h4>
+	<p>Les sondes dites chaudes sont des sondes rendues radioactives
+	par l'incorporation le plus souvent d'un phosphore 32 (isotope 
+	radioactif du phosphore noté <sup>32</sup>P) dans sa molécule. 
+	La révélation de la sonde
+	se fera par <a href="https://fr.wikipedia.org/wiki/Autoradiographie" 
+	title="autoradiographie sur wikipedia" target="_blank"><mark>
+	autoradiographie</mark></a> ou par mesure de 
+	scintillation ; cette méthode très sensible est souvent remplacée
+	par une méthode froide moins problématique ...</p>
+	<textarea li="10"></textarea>
+	<p>Les sondes dites froides sont marquées :</p>
+	<ul>
+		<li>soit par un ligand détectable : antigène ou biotine ; une 
+		molécule reconnaîtra spécifiquement ce ligand et sera soit 
+		fluorescente, soit liée à une enzyme chromogénique.</li>
+		<li>soit directement à un fluorochrome (cf. <em><a 
+href="https://fr.wikipedia.org/wiki/Hybridation_in_situ_en_fluorescence" 
+	title="Fluorescence In Situ Hybridization" target="_blank">FISH</a> 
+	painting</em>),
+		soit directement à une enzyme chromogénique ou luminogénique.</li>
+	</ul>
+
+	</details>
+	<!-- -------------------------------------------------------------->
+	<h2>Mesure de la quantité de protéines produites</h2>
+	<details><summary>western blot, ELISA, immuno-précipitation et 
+	SDS-PAGE</summary>
+	<h3>Comparaison Western et Northern Blot</h3>
+	<p>La technique inventée par le docteur Southern pour détecter une
+	séquence spécifique au sein d'un mélange de fragments d'ADN fut 
+	adaptée respectivement à :</p>
+	<ul>
+		<li>la détection d'une séquence d'<mark>ARN</mark> au sein d'un
+		mélange de molécules d'ARN de tailles différentes ; cette 
+		technique est appelée <mark><em><b>Northern Blot</b></em></mark> 
+		</li>
+		<li>la détection d'une <mark>protéine</mark> au sein d'un
+		mélange de protéines de tailles différentes ; cette 
+		technique est appelée <mark><em><b>Western Blot</b></em></mark> 
+		</li>
+	</ul>
+	<h4>points communs</h4>
+	<p>Southern, Northern, et Southern Blot partagent trois étapes :</p>
+	<ol>
+		<li>la première consiste à séparer les molécules du mélange 
+		par électrophorèse ;</li>
+		<li>la seconde consiste à transférer les molécules du gel vers
+		une membrane qui fixe les molécules sans changer leur position
+		relatives dans le gel ; ce trasfert se fait soit par capillarité
+		soit par électrophorèse perpendiculaire ...</li>
+		<li>la dernière consiste à révéler la présence des cibles 
+		recherchées après avoir saturé la membrane dans ses sites non
+		spécifiques pour éviter des faux positifs ; cette dernière
+		étape necéssite de nombreux lavages à chaque étape pour éliminer
+		les molécules fixées non spécifiquement (évite les bruits de 
+		fond).
+		</li>
+	</ol>
+	
+	<h4>différences</h4>
+	<p></p>
+	</details>
+</details>
+<hr>
+<!-- ------------------------------------------------------------------>
+<!-- ----------------------------------------------------------------
+<header>
+	<h1>Partie entraînement : dérouler (et enrouler) les questions ;  
+	essayez de battre votre record !</h1>
+	<p id="score">Votre score : 0 </p>
+</header>
+<section id="zoneQuestions">
+	<!-- Ici va se placer le code des questions-->
+<!-- /section> -->
+<p id="debug">------------</p>
+</section>
+
+<footer>
+	<p> <u>Sources et liens utiles :</u></p>
+	<ul class="menu">
+		<li><a href="https://edpuzzle.com/open/cibatej" target="_blank">
+			
+		<img src="./img/southern blot recessive rflp dendrogram family genetic.gif" 
+		alt="dendrogramme de la génétique familiale d'une maladie" />
+			le southern blot pour le génotypage</a> </li>
+		
+		<li><a href="https://rnbio.sorbonne-universite.fr/sites/default//files/animations/bio_mol/operon_lactose_4/operon_lactose_4.html" target="_blank">animation sur l'opéron lactose</a> 
+		       en présence de lactose (en français !)</li>
+		<li><a href="https://rnbio.sorbonne-universite.fr/bio-mol_operon-lactose_operon4bis" target="_blank">opéron lactose (en français !)</a></li>
+		<li><a href="http://www.vcell.science/project/lacoperon" target="_blank">lactose operon animation</a></li>
+		<li><a href="https://unicode.org/emoji/charts/full-/emoji-list.html" target="_blank">site officiel des émoticons</a></li>	
+		<li><a href="https://www.bioutils.ch/" target="_blank" title="protocoles et cours en ligne en \
+		       génie génétique">bio outils</a></li>	
+	</ul>
+</footer>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<article id="agenda" class="ressourceCachee" onkeydown="if (event.keyCode == 27) voir('agenda');">
+	<button class="btnQuitter" onclick="voir('agenda');">X
+	</button>
+	<iframe src="Cours%20sur%20l'expression%20des%20g%C3%A8nes_fichiers/embed.html" style="border: 0" scrolling="no" width="800" height="600" frameborder="0"></iframe>
+
+</article>
+
+
+
+
+</body></html>

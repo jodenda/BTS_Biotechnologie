@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title> expression génétique </title>
+<!-- ------------------------------------------------------------------>
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/style.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/numerotationTitres.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/ressourcesCachees.css">
+	<link rel="stylesheet" type="text/css" 
+	      href="../../CSS/styleQuiz.css">
+    <link rel="stylesheet" type="text/css" 
+          href="../../CSS/simpleMenuHorizontal.css">
+
+<!-- ------------------------------------------------------------------>
+	<!-- Les deux lignes suivantes permettent d'insérer une icône à coté 
+	     de l'onglet de la page -->
+	<link rel="shortcut icon" href="icone.ico" type="image/x-icon"/>
+	<link rel="icon" href="icone.ico" type="image/x-icon"/>    
+	
+	<script language="JavaScript" src="../../JS/moteurQuiz.js"></script>
+	<script language="JavaScript" src="quizExpressionGenes.js"></script>
+	<script language="JavaScript" src="../../JS/affichages.js"></script> 
+	<script language="JavaScript">
+		var titrePage = "Site de révisions pour le BTS Biotechnologie de Decazeville";
+			var aurevoir = "À bientôt, revenez vite !";   //À = Alt + 0192
+			//var id = setInterval(ma_fontion, 1000);
+			
+		function titre(texte) 
+		{
+			document.title = texte;
+		}
+		function init () { // met en place les NQ questions/réponses/corrigés
+			NQ = Q.length; // nombre de questions
+			
+			let tabThemes = [7, "A", "B", "C", "D", "E", "F", "G"];
+			zoneQ = document.getElementById("zoneQuestions");
+			for (var i=1; i<NQ+1; i++) {
+				zoneQ.innerHTML += " <div id='dvQ"+i+"'></div><hr/>";
+				afficherQ ([i,1],[],tabThemes);
+			}
+		}	
+	</script>
+	<style>
+		abbr {
+			font-weight : bold;
+			
+		}
+	</style>
+</head>
+
+<body onload="init();" onblur="titre(aurevoir);" 
+      onfocus="titre(titrePage);">
+<header>
+<p id="titrePrincipal">Régulation de l'expression des gènes codant des 
+protéines</p>
+<nav>
+	<ul class="menu">
+		<li><a href="../../index.html">retour à la page d'accueil</a></li>
+		<li><a href="javascript:voir('agenda');">voir l'agenda</a></li>
+		<li><a href="./pageVideoBMGG.html">page vidéos</a>
+		<li><a href="./page_expression_gene_prot.html">cours sur 
+				l'expression des gènes</a>
+		</li>
+	</ul>
+</nav>
+</header>
+
+<!-- ------------------------------------------------------------------>
+<!-- ------------------------------------------------------------------>
+<header>
+	<p>Partie entraînement : dérouler (et enrouler) les questions ;  
+	essayez de battre votre record !</p>
+	<p id="score">Votre score : 0 </p>
+</header>
+<article id="zoneQuestions">
+	<!-- Ici va se placer le code des questions-->
+</article>
+<p id="debug">------------</p>
+
+<footer>
+	<p> <u>Sources et liens utiles :</u></p>
+	<ul class="menu">
+		<li><a href="https://rnbio.sorbonne-universite.fr/sites/default\
+		/files/animations/bio_mol/operon_lactose_4/operon_lactose_4.html"  
+		       target="_blank">animation sur l'opéron lactose</a> 
+		       en présence de lactose (en français !)</li>
+		<li><a href="https://rnbio.upmc.fr/bio-mol_operon-\
+		lactose_operon2"  
+		       target="_blank">opéron lactose (en français !)</a></li>
+		<li><a href="http://www.vcell.science/project/lacoperon" 
+		target="_blank">lactose operon animation</a></li>
+		<li><a href="https://unicode.org/emoji/charts/full-\
+		emoji-list.html" 
+		       target="_blank">site officiel des émoticons</a></li>	
+		<li><a href="https://www.bioutils.ch/" 
+		       target="_blank" title="protocoles et cours en ligne en \
+		       génie génétique">bio outils</a></li>	
+	</ul>
+</footer>
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------     -------------- -->
+
+<article id="agenda" class="ressourceCachee" 
+         onkeydown="if (event.keyCode == 27) voir('agenda');">
+	<button class="btnQuitter" onclick="voir('agenda');" >X
+	</button>
+	<iframe src="https://calendar.google.com/calendar/embed?\
+	src=jip4p6t2tn41ukmjhkhettuu30%40group.calendar.google.com\
+	&ctz=Europe%2FParis" style="border: 0" width="800" height="600" 
+	frameborder="0" scrolling="no"></iframe>
+
+</article>
+
+</body>
+</html>
+
